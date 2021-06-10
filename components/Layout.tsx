@@ -1,13 +1,15 @@
 import React from 'react'
 import {Header, Footer} from './'
-
+import {LayoutContainer} from '../assets'
 const Layout = ({children}) => {
     return (
-        <div>
-            <Header />
-            {children}
-            <Footer/>
-        </div>
+        <>
+         <Header />
+            <LayoutContainer>           
+                {children}          
+            </LayoutContainer>
+        <Footer/>
+        </>
     )
 }
 

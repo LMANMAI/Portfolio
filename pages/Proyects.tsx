@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Proyects:React.FC = () => {
+const ProyectsPage:React.FC = () => {
     return (
         <div>
             desde la pagina de los proyectos
@@ -8,4 +8,4 @@ const Proyects:React.FC = () => {
     )
 }
 
-export default Proyects
+export default ProyectsPage

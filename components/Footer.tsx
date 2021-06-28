@@ -1,11 +1,11 @@
-import React from 'react'
-
+import React from "react";
+import { FooterContainer } from "../assets";
 const Footer = () => {
-    return (
-        <div>
-            este es el footer
-        </div>
-    )
-}
+  return (
+    <FooterContainer>
+      <p>Made with {"</>"} by Lucas Maidana</p>
+    </FooterContainer>
+  );
+};
 
-export default Footer
+export default Footer;

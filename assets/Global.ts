@@ -27,5 +27,9 @@ a{
 ul{
     list-style: none;
 }
+section{
+    height: 100vh;
+    padding: 2rem 0.4rem;
+}
 `;
 export default GlobalStyle;

@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
-const ProyectsPage:React.FC = () => {
-    return (
-        <div>
-            desde la pagina de los proyectos
-        </div>
-    )
-}
+const ProyectsPage: React.FC = () => {
+  return <section>desde la pagina de los proyectos</section>;
+};
 
-export default ProyectsPage
+export default ProyectsPage;

@@ -15,6 +15,7 @@ import {
   FiFolder,
   FiSend,
   FiX,
+  FiImage,
 } from "react-icons/fi";
 interface HeaderProps {}
 const Header: React.FC<HeaderProps> = () => {
@@ -27,7 +28,7 @@ const Header: React.FC<HeaderProps> = () => {
   return (
     <HeaderElement>
       <MenuHeader>
-        <p> _LucasMaidana</p>
+        <p> Lucas_Maidana</p>
 
         <Button onClick={() => handleClickMenu()}>
           <FiGrid />
@@ -58,7 +59,7 @@ const Header: React.FC<HeaderProps> = () => {
             </Link>
             <Link href="/Portfolio">
               <li>
-                <FiFolder />
+                <FiImage />
                 Portfolio
               </li>
             </Link>
@@ -66,6 +67,12 @@ const Header: React.FC<HeaderProps> = () => {
               <li>
                 <FiSend />
                 Contact
+              </li>
+            </Link>
+            <Link href="#!">
+              <li>
+                <FiFolder />
+                Experience
               </li>
             </Link>
           </MenuLinks>

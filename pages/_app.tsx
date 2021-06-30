@@ -4,7 +4,6 @@ import { AppProps } from "next/app";
 import { ThemeProvider } from "styled-components";
 import theme from "../assets/Theme";
 import GlobalStyle from "../assets/Global";
-import { Header } from "next/dist/lib/load-custom-routes";
 import Head from "next/head";
 interface CustomAppProps extends AppProps {}
 
@@ -18,6 +17,11 @@ const App: React.FC<CustomAppProps> = ({ Component, pageProps }) => {
           href="https://fonts.googleapis.com/css2?family=Sansita:wght@400;700;800&display=swap"
           rel="stylesheet"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Aclonica&family=Berkshire+Swash&display=swap"
+          rel="stylesheet"
+        />
+        <title>Lucas Maidana</title>
       </Head>
       <Layout>
         <Component {...pageProps} />

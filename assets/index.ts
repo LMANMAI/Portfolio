@@ -55,7 +55,7 @@ export const MenuLinks = styled.ul`
   padding: 3rem 1.5rem;
   gap: 2rem;
 `;
-export const MenuContainer = styled.div<IMenuValue>`
+export const MenuContainer = styled.nav<IMenuValue>`
   margin: 0;
   padding: 0;
   position: fixed;
@@ -109,9 +109,56 @@ export const MenuContainer = styled.div<IMenuValue>`
     }
   }
 `;
+/*About me Page */
+export const AboutMeContainer = styled.section`
+  display: grid;
+  grid-template-rows: auto 1fr;
+  @media (min-width: 768px) {
+    grid-template-rows: none;
+    grid-template-columns: 2fr 1fr;
+  }
+  @media (min-width: 1024px) {
+    align-items: center;
+  }
+`;
+export const Circle = styled.div`
+  grid-row: 1 / 2;
+  margin: 0 auto;
+  background-color: ${({ theme }) => theme.brown};
+  width: 280px;
+  height: 280px;
+  border-radius: 100% 100% 150% 150%;
+  display: flex;
+  img {
+    border: 1px solid red;
+  }
+  @media (min-width: 768px) {
+    grid-column: 2 / 3;
+  }
+`;
+export const Presentiation = styled.div`
+  padding: 1rem 0.5rem;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  span {
+    font-weight: bolder;
+    font-size: 15px;
+  }
+  h2 {
+    font-size: 14px;
+    font-weight: 300;
+  }
+  @media (min-width: 1024px) {
+    padding-left: 2rem;
+    width: 100%;
+  }
+`;
+/**Skills Page */
 
 /*Footer */
-
 export const FooterContainer = styled.footer`
   position: fixed;
   bottom: 0px;

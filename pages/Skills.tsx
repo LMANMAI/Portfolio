@@ -1,32 +1,42 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { GetServerSideProps } from "next";
-import { getSkills } from "../firebase/skills";
+import { PanelContainer, Panel } from "../assets";
+const skills_Array = [
+  { nombre: "JavaScript", category: "FE" },
+  { nombre: "TypeScript", category: "FE" },
+  { nombre: "React.js", category: "FE" },
+  { nombre: "Next.js", category: "FE" },
+  { nombre: "Node.js", category: "BE" },
+  { nombre: "Exprees", category: "BE" },
+  { nombre: "Nest.js", category: "BE" },
+  { nombre: "MongoDB", category: "BE" },
+  { nombre: "Firebase", category: "BE" },
+  { nombre: "Git", category: "BE" },
+  { nombre: "CSS", category: "FE" },
+  { nombre: "SASS", category: "FE" },
+];
 const Skills = () => {
-  useEffect(() => {
-    getSkills();
-  }, []);
   return (
     <section>
-      <div>
-        <button>All</button>
-        <button>Front End</button>
-        <button> Back End</button>
-      </div>
-
-      <ul>
-        <li>JavaScript</li>
-        <li>TypeScript</li>
-        <li>React.js</li>
-        <li>Next.js</li>
-        <li>Node.js</li>
-        <li>Exprees</li>
-        <li>Nest.js</li>
-        <li>MongoDB</li>
-        <li>Firebase</li>
-        <li>Git</li>
-        <li>CSS</li>
-        <li>SASS</li>
-      </ul>
+      <h2>My Skills</h2>
+      <PanelContainer>
+        <Panel>
+          <h3>Front End</h3>
+          {skills_Array
+            .filter((skill) => skill.category === "FE")
+            .map((filteredSkill) => (
+              <div>{filteredSkill.nombre}</div>
+            ))}
+        </Panel>
+        <Panel>
+          <h3>Back End</h3>
+          {skills_Array
+            .filter((skill) => skill.category === "BE")
+            .map((filteredSkill) => (
+              <div>{filteredSkill.nombre}</div>
+            ))}
+        </Panel>
+      </PanelContainer>
     </section>
   );
 };

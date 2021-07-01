@@ -28,7 +28,7 @@ ul{
     list-style: none;
 }
 section{
-    height: 100vh;
+    min-height: 95vh;
     padding: 2rem 0.4rem;
 }
 `;

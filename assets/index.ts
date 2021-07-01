@@ -146,6 +146,7 @@ export const Presentiation = styled.div`
   span {
     font-weight: bolder;
     font-size: 15px;
+    color: ${({ theme }) => theme.red};
   }
   h2 {
     font-size: 14px;
@@ -153,11 +154,64 @@ export const Presentiation = styled.div`
   }
   @media (min-width: 1024px) {
     padding-left: 2rem;
-    width: 100%;
+    width: 85%;
   }
 `;
 /**Skills Page */
+export const PanelContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
+`;
+export const Panel = styled.div`
+  width: 90%;
+  height: 65vh;
+  background-color: ${({ theme }) => theme.light_gray};
+  /* //tablet
+  @media (min-width: 768px) {
+  } */
+  //desktop
+  @media (min-width: 1024px) {
+    width: 28%;
+  }
+`;
 
+/**Portfolio */
+export const SkillsNavContainer = styled.nav`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.525rem;
+  gap: 5px;
+  button {
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    padding: 1.25vw 2.125vw;
+    color: ${({ theme }) => theme.white};
+    background-color: ${({ theme }) => theme.light_brown};
+    cursor: pointer;
+  }
+`;
+
+export const ProyectsContainer = styled.div`
+  border: 1px solid red;
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  div {
+    height: 150px;
+    border: 1px solid blue;
+    border-radius: 15px;
+  }
+`;
 /*Footer */
 export const FooterContainer = styled.footer`
   position: fixed;

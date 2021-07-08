@@ -214,8 +214,8 @@ export const ProyectsContainer = styled.div`
 `;
 /*Footer */
 export const FooterContainer = styled.footer`
-  position: fixed;
-  bottom: 0px;
+  /* position: absolute;
+  bottom: 0px; */
   width: 100vw;
   background-color: ${({ theme }) => theme.brown};
   color: white;

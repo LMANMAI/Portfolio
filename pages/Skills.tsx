@@ -1,43 +1,79 @@
 import React from "react";
 import { GetServerSideProps } from "next";
-import { PanelContainer, Panel } from "../assets";
+import { PanelContainer, Panel, Separador, Skill } from "../assets";
 const skills_Array = [
-  { nombre: "JavaScript", category: "FE" },
-  { nombre: "TypeScript", category: "FE" },
-  { nombre: "React.js", category: "FE" },
-  { nombre: "Next.js", category: "FE" },
-  { nombre: "Node.js", category: "BE" },
-  { nombre: "Exprees", category: "BE" },
-  { nombre: "Nest.js", category: "BE" },
-  { nombre: "MongoDB", category: "BE" },
-  { nombre: "Firebase", category: "BE" },
-  { nombre: "Git", category: "BE" },
-  { nombre: "CSS", category: "FE" },
-  { nombre: "SASS", category: "FE" },
+  {
+    certificate: true,
+    curso: ["Udemy"],
+    nombre: "JavaScript",
+    category: "FE",
+  },
+  {
+    certificate: true,
+    curso: ["Udemy", "codigo facilito"],
+    nombre: "TypeScript",
+    category: "FE",
+  },
+  {
+    certificate: false,
+    curso: ["Udemy", "Youtube", "Twicht"],
+    nombre: "React.js",
+    category: "FE",
+  },
+  {
+    certificate: false,
+    curso: ["Udemy", "Youtube", "Twicht"],
+    nombre: "Next.js",
+    category: "FE",
+  },
+  {
+    certificate: false,
+    curso: ["Udemy", "Platzi"],
+    nombre: "Node.js",
+    category: "BE",
+  },
+  { certificate: false, curso: ["Udemy"], nombre: "Exprees", category: "BE" },
+  { certificate: false, curso: ["YouTube"], nombre: "Nest.js", category: "BE" },
+  {
+    certificate: false,
+    curso: ["Udemy", "YouTube"],
+    nombre: "MongoDB",
+    category: "BE",
+  },
+  { certificate: false, curso: ["Udemy"], nombre: "Firebase", category: "BE" },
+  {
+    certificate: false,
+    curso: ["Platzi", "Udemy"],
+    nombre: "Git",
+    category: "BE",
+  },
+  {
+    certificate: true,
+    curso: ["Udemy", "Youtube"],
+    nombre: "CSS",
+    category: "FE",
+  },
+  { certificate: true, curso: ["Udemy"], nombre: "SASS", category: "FE" },
 ];
 const Skills = () => {
   return (
-    <section>
+    <PanelContainer>
       <h2>My Skills</h2>
-      <PanelContainer>
-        <Panel>
-          <h3>Front End</h3>
-          {skills_Array
-            .filter((skill) => skill.category === "FE")
-            .map((filteredSkill) => (
-              <div>{filteredSkill.nombre}</div>
-            ))}
-        </Panel>
-        <Panel>
-          <h3>Back End</h3>
-          {skills_Array
-            .filter((skill) => skill.category === "BE")
-            .map((filteredSkill) => (
-              <div>{filteredSkill.nombre}</div>
-            ))}
-        </Panel>
-      </PanelContainer>
-    </section>
+      <Panel>
+        {React.Children.toArray(
+          skills_Array.map((skill) => (
+            <Skill>
+              {skill.nombre}
+              <Separador></Separador>
+              {skill.curso.map((curso) => (
+                <p>{curso}</p>
+              ))}
+              <p>{skill.certificate && "Certificate"}</p>
+            </Skill>
+          ))
+        )}
+      </Panel>
+    </PanelContainer>
   );
 };
 

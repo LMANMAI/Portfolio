@@ -1,16 +1,43 @@
 import React from "react";
-import AboutMePage from "./AboutMe";
-import Skills from "./Skills";
-import Portfolio from "./Portfolio";
-import ContactPage from "./Contact";
-
+import {
+  AboutMeContainer,
+  Circle,
+  Presentiation,
+  Social,
+  SocialButton,
+} from "../assets";
+import { SiMinutemailer } from "react-icons/si";
+import { TiSocialLinkedin, TiSocialGithub } from "react-icons/ti";
 export default function Home() {
   return (
-    <main>
-      <AboutMePage />
-      <Skills />
-      <Portfolio />
-      <ContactPage />
-    </main>
+    <AboutMeContainer>
+      <Circle>{/* <img src="" alt="Profile" /> */}</Circle>
+
+      <Presentiation>
+        <p>
+          Hi there I'm <span>Lucas</span>!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic minus
+          praesentium facere quam omnis aliquid quas dolor esse animi et, ullam
+          minima pariatur sit recusandae. Expedita fugit enim laudantium itaque!
+        </p>
+      </Presentiation>
+      <hr />
+      <Social>
+        <SocialButton
+          href="https://www.linkedin.com/in/lucas-maidana13/"
+          target="_blank"
+        >
+          <TiSocialLinkedin />
+        </SocialButton>
+        <SocialButton href="https://github.com/LMANMAI" target="_blank">
+          <TiSocialGithub />
+        </SocialButton>
+        <SocialButton href="/Contact">
+          <SiMinutemailer />
+        </SocialButton>
+      </Social>
+    </AboutMeContainer>
   );
 }

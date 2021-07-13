@@ -1,5 +1,9 @@
 import React from "react";
-import { SkillsNavContainer, ProyectsContainer } from "../assets";
+import {
+  PortfolioContainer,
+  SkillsNavContainer,
+  ProyectsContainer,
+} from "../assets";
 const proyectsPortfolio = [
   { name: "Pokedex", img: "", link: "", linkGitHub: "", technologies: "" },
   { name: "ToDo App", img: "", link: "", linkGitHub: "", technologies: "" },
@@ -38,7 +42,7 @@ const proyectsPortfolio = [
 ];
 const ProyectsPage: React.FC = () => {
   return (
-    <section>
+    <PortfolioContainer>
       <SkillsNavContainer>
         <button>All</button>
         <button>Front End</button>
@@ -49,7 +53,7 @@ const ProyectsPage: React.FC = () => {
           proyectsPortfolio.map((proyecto) => <div>{proyecto.name}</div>)
         )}
       </ProyectsContainer>
-    </section>
+    </PortfolioContainer>
   );
 };
 

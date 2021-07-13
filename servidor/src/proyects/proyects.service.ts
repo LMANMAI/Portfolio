@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { IProyects } from '../../Interface/proyects.interface';
+import { IProyects } from '../Interface/proyects.interface';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 @Injectable()
@@ -16,7 +16,7 @@ export class ProyectsService {
     const proyects = await this.proyectModel.find();
     return proyects;
   }
-  async createOne(proyect: IProyects): Promise<IProyects> {
+  async create(proyect: IProyects): Promise<IProyects> {
     const new_proyect = await new this.proyectModel(proyect);
     return await new_proyect.save();
   }

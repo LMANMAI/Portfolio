@@ -45,10 +45,10 @@ const Header: React.FC<HeaderProps> = () => {
                 <FiHome /> Home
               </li>
             </Link>
-            <Link href="/AboutMe">
+            <Link href="/Journey">
               <li>
                 <FiUser />
-                About
+                Journey
               </li>
             </Link>
             <Link href="/Skills">

@@ -1,6 +1,12 @@
 import React from "react";
 import { GetServerSideProps } from "next";
-import { PanelContainer, Panel, Separador, Skill } from "../assets";
+import {
+  PanelContainer,
+  Panel,
+  Separador,
+  Skill,
+  SkillContainer,
+} from "../assets";
 const skills_Array = [
   {
     certificate: true,
@@ -55,6 +61,7 @@ const skills_Array = [
   },
   { certificate: true, curso: ["Udemy"], nombre: "SASS", category: "FE" },
 ];
+import { BiBadgeCheck } from "react-icons/bi";
 const Skills = () => {
   return (
     <PanelContainer>
@@ -63,12 +70,16 @@ const Skills = () => {
         {React.Children.toArray(
           skills_Array.map((skill) => (
             <Skill>
-              {skill.nombre}
+              <div>
+                {skill.nombre}
+                {skill.certificate && <BiBadgeCheck />}
+              </div>
               <Separador></Separador>
-              {skill.curso.map((curso) => (
-                <p>{curso}</p>
-              ))}
-              <p>{skill.certificate && "Certificate"}</p>
+              <SkillContainer>
+                {skill.curso.map((curso) => (
+                  <p>{curso}</p>
+                ))}
+              </SkillContainer>
             </Skill>
           ))
         )}

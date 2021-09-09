@@ -118,7 +118,7 @@ const ProyectsPage: React.FC = () => {
       <ProyectsContainer>
         {React.Children.toArray(
           proyectsPortfolio.map((proyecto) => (
-            <Proyect key={proyecto.name} data-height={proyecto.height}>
+            <Proyect key={proyecto.name} height={proyecto.height}>
               <p>{proyecto.name}</p>
             </Proyect>
           ))

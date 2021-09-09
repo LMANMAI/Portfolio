@@ -308,7 +308,7 @@ export const ProyectsContainer = styled.div`
 
 export const Proyect = styled.div<IHeight>`
   display: inline-block;
-  height: ${(props) => props.height && `px`};
+  height: ${(props) => `${props.height}px`};
   width: 100%;
   color: ${({ theme }) => theme.white};
   border: 0.2px solid #e6e6e6;

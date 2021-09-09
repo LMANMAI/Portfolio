@@ -7,7 +7,7 @@ const DefaultTheme = {
   light_gray: "#b1a7a6",
   black: "#161a1d",
   menuvalue: false,
-  heigth: null,
+  heigth: Number,
 };
 export type ThemeType = typeof DefaultTheme;
 export default DefaultTheme;

@@ -21,7 +21,7 @@ const App: React.FC<CustomAppProps> = ({ Component, pageProps }) => {
           href="https://fonts.googleapis.com/css2?family=Aclonica&family=Berkshire+Swash&display=swap"
           rel="stylesheet"
         />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap"
           rel="stylesheet"

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { StyledFunction } from "styled-components";
 {
   /*
  //tablet
@@ -9,11 +9,11 @@ import styled from "styled-components";
   }
 */
 }
-interface IMenuValue {
+interface IMenu {
   menuvalue: boolean;
 }
-interface heightValue {
-  height: Number;
+interface IHeight {
+  height?: Number;
 }
 
 export const LayoutContainer = styled.main`
@@ -60,7 +60,7 @@ export const MenuLinks = styled.ul`
   padding: 3rem 1.5rem;
   gap: 2rem;
 `;
-export const MenuContainer = styled.nav<IMenuValue>`
+export const MenuContainer = styled.nav<IMenu>`
   z-index: 99;
   margin: 0;
   padding: 0;
@@ -305,9 +305,10 @@ export const ProyectsContainer = styled.div`
   div {
   }
 `;
-export const Proyect = styled.div`
+
+export const Proyect = styled.div<IHeight>`
   display: inline-block;
-  height: ${(props) => props.heigth};
+  height: ${(props) => props.height && `px`};
   width: 100%;
   color: ${({ theme }) => theme.white};
   border: 0.2px solid #e6e6e6;

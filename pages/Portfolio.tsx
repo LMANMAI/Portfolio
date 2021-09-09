@@ -7,7 +7,7 @@ import {
 } from "../assets";
 const proyectsPortfolio = [
   {
-    height: "150px",
+    height: 150,
     name: "Pokedex",
     img: "",
     link: "",
@@ -15,7 +15,7 @@ const proyectsPortfolio = [
     technologies: "",
   },
   {
-    height: "250px",
+    height: 250,
     name: "ToDo App",
     img: "",
     link: "",
@@ -23,7 +23,7 @@ const proyectsPortfolio = [
     technologies: "",
   },
   {
-    height: "235px",
+    height: 235,
     name: "Wallet Dashboard",
     img: "",
     link: "",
@@ -31,7 +31,7 @@ const proyectsPortfolio = [
     technologies: "",
   },
   {
-    height: "205px",
+    height: 205,
     name: "Sneakers Commerce",
     img: "",
     link: "",
@@ -39,7 +39,7 @@ const proyectsPortfolio = [
     technologies: "",
   },
   {
-    height: "190px",
+    height: 190,
     name: "Disney + Clone",
     img: "",
     link: "",
@@ -47,7 +47,7 @@ const proyectsPortfolio = [
     technologies: "",
   },
   {
-    height: "300px",
+    height: 300,
     name: "Netflix Clone",
     img: "",
     link: "",
@@ -55,7 +55,7 @@ const proyectsPortfolio = [
     technologies: "",
   },
   {
-    height: "275px",
+    height: 275,
     name: "ToDo API",
     img: "",
     link: "",
@@ -63,7 +63,7 @@ const proyectsPortfolio = [
     technologies: "",
   },
   {
-    height: "246px",
+    height: 246,
     name: "Sneaker API",
     img: "",
     link: "",
@@ -71,7 +71,7 @@ const proyectsPortfolio = [
     technologies: "",
   },
   {
-    height: "200px",
+    height: 200,
     name: "Burger Api",
     img: "",
     link: "",
@@ -79,7 +79,7 @@ const proyectsPortfolio = [
     technologies: "",
   },
   {
-    height: "375px",
+    height: 375,
     name: "Images App",
     img: "",
     link: "",
@@ -87,7 +87,7 @@ const proyectsPortfolio = [
     technologies: "",
   },
   {
-    height: "175px",
+    height: 175,
     name: "Pokedex",
     img: "",
     link: "",
@@ -95,7 +95,7 @@ const proyectsPortfolio = [
     technologies: "",
   },
   {
-    height: "150px",
+    height: 150,
     name: "ToDo App",
     img: "",
     link: "",
@@ -118,7 +118,7 @@ const ProyectsPage: React.FC = () => {
       <ProyectsContainer>
         {React.Children.toArray(
           proyectsPortfolio.map((proyecto) => (
-            <Proyect key={proyecto.name} heigth={proyecto.height}>
+            <Proyect key={proyecto.name} data-height={proyecto.height}>
               <p>{proyecto.name}</p>
             </Proyect>
           ))

@@ -12,6 +12,10 @@ import styled from "styled-components";
 interface IMenuValue {
   menuvalue: boolean;
 }
+interface heightValue {
+  height: Number;
+}
+
 export const LayoutContainer = styled.main`
   background-color: ${({ theme }) => theme.white};
   color: ${({ theme }) => theme.black};
@@ -214,7 +218,7 @@ export const Panel = styled.div`
   @media (min-width: 1024px) {
     padding: 2rem;
     width: 90%;
-    grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
   }
 `;
 export const Separador = styled.div`
@@ -257,6 +261,9 @@ export const Skill = styled.div`
         }
       }
     }
+  }
+  @media (min-width: 768px) {
+    height: 150px;
   }
 `;
 export const SkillContainer = styled.div`
@@ -358,7 +365,7 @@ export const Formulario = styled.form`
   min-height: 200px;
   padding: 1rem;
   height: fit-content;
-  background-color: ${({ theme }) => theme.gray};
+  background-color: ${({ theme }) => theme.green};
   @media (min-width: 768px) {
     width: 60%;
   }

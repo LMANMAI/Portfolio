@@ -111,19 +111,15 @@ const ProyectsPage: React.FC = () => {
     <PortfolioContainer>
       <SkillsNavContainer>
         <button onClick={() => handleClick("all")}>All</button>
-        <button onClick={() => handleClick("Front end proyects")}>
-          Front End
-        </button>
-        <button onClick={() => handleClick("Back End proyects")}>
-          {" "}
-          Back End
-        </button>
+        <button onClick={() => handleClick("Front End")}>Front End</button>
+        <button onClick={() => handleClick("Back End")}>Back End</button>
+        <button onClick={() => handleClick("Challenges")}>Challenges</button>
       </SkillsNavContainer>
       <ProyectsContainer>
         {React.Children.toArray(
           proyectsPortfolio.map((proyecto) => (
             <Proyect key={proyecto.name} heigth={proyecto.height}>
-              {proyecto.name}
+              <p>{proyecto.name}</p>
             </Proyect>
           ))
         )}

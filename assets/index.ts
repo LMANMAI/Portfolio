@@ -308,6 +308,7 @@ export const ProyectsContainer = styled.div`
 
 export const Proyect = styled.div<IHeight>`
   display: inline-block;
+
   height: ${(props) => props.height && `${props.height}px`};
   width: 100%;
   color: ${({ theme }) => theme.white};
@@ -317,6 +318,10 @@ export const Proyect = styled.div<IHeight>`
   padding: 5px;
   margin-bottom: 15px;
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+  p {
+    color: black;
+    text-align: center;
+  }
   &:hover {
     cursor: pointer;
     padding: 10px;

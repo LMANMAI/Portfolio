@@ -18,9 +18,11 @@ export default function Home() {
           Hi there I'm <span>Lucas</span>!
         </p>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic minus
-          praesentium facere quam omnis aliquid quas dolor esse animi et, ullam
-          minima pariatur sit recusandae. Expedita fugit enim laudantium itaque!
+          Soy técnico en Informática ,poseo conocimiento y formación sobre
+          distintas tecnologías y lenguajes de programación, me interesa poder
+          trabajar en una empresa que me permita seguir desarrollándome en este
+          área. Me gusta trabajar en equipo, y creo que es importante para crear
+          entre todos un buen ambiente laboral.
         </p>
       </Presentiation>
       <hr />

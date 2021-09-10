@@ -41,36 +41,36 @@ const Header: React.FC<HeaderProps> = () => {
 
           <MenuLinks>
             <Link href="/">
-              <li>
+              <li onClick={() => handleClickMenu()}>
                 <FiHome /> Home
               </li>
             </Link>
             <Link href="/Journey">
-              <li>
+              <li onClick={() => handleClickMenu()}>
                 <FiUser />
                 Journey
               </li>
             </Link>
             <Link href="/Skills">
-              <li>
+              <li onClick={() => handleClickMenu()}>
                 <FiCode />
                 Skills
               </li>
             </Link>
             <Link href="/Portfolio">
-              <li>
+              <li onClick={() => handleClickMenu()}>
                 <FiImage />
                 Portfolio
               </li>
             </Link>
             <Link href="/Contact">
-              <li>
+              <li onClick={() => handleClickMenu()}>
                 <FiSend />
                 Contact
               </li>
             </Link>
             <Link href="#!">
-              <li>
+              <li onClick={() => handleClickMenu()}>
                 <FiFolder />
                 Experience
               </li>

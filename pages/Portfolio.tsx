@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   PortfolioContainer,
   SkillsNavContainer,
@@ -8,6 +8,7 @@ import {
 const proyectsPortfolio = [
   {
     height: 150,
+    proyectType: "FE",
     name: "Pokedex",
     img: "",
     link: "",
@@ -16,6 +17,7 @@ const proyectsPortfolio = [
   },
   {
     height: 250,
+    proyectType: "FE",
     name: "ToDo App",
     img: "",
     link: "",
@@ -24,6 +26,7 @@ const proyectsPortfolio = [
   },
   {
     height: 235,
+    proyectType: "FE",
     name: "Wallet Dashboard",
     img: "",
     link: "",
@@ -32,6 +35,7 @@ const proyectsPortfolio = [
   },
   {
     height: 205,
+    proyectType: "FE",
     name: "Sneakers Commerce",
     img: "",
     link: "",
@@ -40,6 +44,7 @@ const proyectsPortfolio = [
   },
   {
     height: 190,
+    proyectType: "FE",
     name: "Disney + Clone",
     img: "",
     link: "",
@@ -48,6 +53,7 @@ const proyectsPortfolio = [
   },
   {
     height: 300,
+    proyectType: "FE",
     name: "Netflix Clone",
     img: "",
     link: "",
@@ -56,6 +62,7 @@ const proyectsPortfolio = [
   },
   {
     height: 275,
+    proyectType: "BE",
     name: "ToDo API",
     img: "",
     link: "",
@@ -64,6 +71,7 @@ const proyectsPortfolio = [
   },
   {
     height: 246,
+    proyectType: "BE",
     name: "Sneaker API",
     img: "",
     link: "",
@@ -72,6 +80,7 @@ const proyectsPortfolio = [
   },
   {
     height: 200,
+    proyectType: "BE",
     name: "Burger Api",
     img: "",
     link: "",
@@ -80,6 +89,7 @@ const proyectsPortfolio = [
   },
   {
     height: 375,
+    proyectType: "FE",
     name: "Images App",
     img: "",
     link: "",
@@ -88,7 +98,8 @@ const proyectsPortfolio = [
   },
   {
     height: 175,
-    name: "Pokedex",
+    proyectType: "challenge",
+    name: "MeLi Challenge",
     img: "",
     link: "",
     linkGitHub: "",
@@ -96,7 +107,26 @@ const proyectsPortfolio = [
   },
   {
     height: 150,
-    name: "ToDo App",
+    proyectType: "challenge",
+    name: "Basement Challenge",
+    img: "",
+    link: "",
+    linkGitHub: "",
+    technologies: "",
+  },
+  {
+    height: 175,
+    proyectType: "challenge",
+    name: "AeroLab Challenge",
+    img: "",
+    link: "",
+    linkGitHub: "",
+    technologies: "",
+  },
+  {
+    height: 150,
+    proyectType: "challenge",
+    name: "RealTrends Challenge",
     img: "",
     link: "",
     linkGitHub: "",
@@ -104,20 +134,28 @@ const proyectsPortfolio = [
   },
 ];
 const ProyectsPage: React.FC = () => {
-  const handleClick = (message: string) => {
-    alert(message);
+  const [items, setLayoutItems] = useState(proyectsPortfolio);
+  const handleClick = (pType: string) => {
+    if (pType === "all") {
+      setLayoutItems(proyectsPortfolio);
+      return;
+    }
+    const filteredData = proyectsPortfolio.filter(
+      (items) => items.proyectType === pType
+    );
+    setLayoutItems(filteredData);
   };
   return (
     <PortfolioContainer>
       <SkillsNavContainer>
         <button onClick={() => handleClick("all")}>All</button>
-        <button onClick={() => handleClick("Front End")}>Front End</button>
-        <button onClick={() => handleClick("Back End")}>Back End</button>
-        <button onClick={() => handleClick("Challenges")}>Challenges</button>
+        <button onClick={() => handleClick("FE")}>Front End</button>
+        <button onClick={() => handleClick("BE")}>Back End</button>
+        <button onClick={() => handleClick("challenge")}>Challenges</button>
       </SkillsNavContainer>
       <ProyectsContainer>
         {React.Children.toArray(
-          proyectsPortfolio.map((proyecto) => (
+          items.map((proyecto) => (
             <Proyect key={proyecto.name} height={proyecto.height}>
               <p>{proyecto.name}</p>
             </Proyect>

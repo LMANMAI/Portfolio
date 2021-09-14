@@ -308,7 +308,7 @@ export const ProyectsContainer = styled.div`
 
 export const Proyect = styled.div<IHeight>`
   display: inline-block;
-
+  width: 100%;
   height: ${(props) => props.height && `${props.height}px`};
   width: 100%;
   color: ${({ theme }) => theme.white};
@@ -318,6 +318,12 @@ export const Proyect = styled.div<IHeight>`
   padding: 5px;
   margin-bottom: 15px;
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+  img {
+    width: 100%;
+    height: 80%;
+    display: block;
+    object-fit: cover;
+  }
   p {
     color: black;
     text-align: center;
@@ -359,7 +365,7 @@ export const BackgrondBox = styled.div`
   position: absolute;
   top: 15px;
   z-index: -1;
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     width: 700px;
     height: 70vh;
     right: 0px;
@@ -377,19 +383,46 @@ export const Formulario = styled.form`
   }
 `;
 export const InputContainer = styled.div`
-  margin: 5px;
-
+  margin: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  input[type="submit"] {
+    cursor: pointer;
+    width: 35%;
+    margin: 8px;
+    outline: none;
+    background-color: ${({ theme }) => theme.brown};
+    color: white;
+  }
   input[type="text"],
   textarea {
     width: 100%;
     border: none;
     outline: none;
-    padding: 8px;
-    border-radius: 5px;
+    padding: 10px;
+    margin: 3px;
   }
   textarea {
     resize: none;
+    height: 90px;
+    &::placeholder {
+      font-family: Helvetica;
+    }
   }
+  div {
+    width: 100%;
+    margin: 0px 3px;
+    text-align: center;
+    span {
+      color: white;
+      font-size: 15px;
+    }
+  }
+`;
+export const SubmitButton = styled.input`
+  padding: 10px;
+  border: none;
 `;
 /*Footer */
 export const FooterContainer = styled.footer`

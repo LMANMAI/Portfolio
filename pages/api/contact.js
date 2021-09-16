@@ -5,6 +5,9 @@ export default async (req, res) => {
   const { name, lastname, email, subject, message } = req.body;
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
+    port: 587,
+    ignoreTLS: false,
+    secure: false,
     auth: {
       user: process.env.user,
       pass: process.env.pass,
@@ -24,7 +27,7 @@ export default async (req, res) => {
     });
     console.log("Mensaje enviado ", emailRes.messageId);
   } catch (error) {
-    console.log(error);
+    console.log("El error fue: ", error);
   }
   res.status(200).json(req.body);
 };

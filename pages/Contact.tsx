@@ -19,7 +19,7 @@ const ContactPage: React.FC = () => {
   const onSubmitForm = async (values) => {
     let config = {
       Method: "post",
-      url: `${process.env.NEXT_PUBLIC_API_URL}/api/contact`,
+      url: `../api/contact`,
       headers: {
         "Content-Type": "application/json",
       },

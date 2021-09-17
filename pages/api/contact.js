@@ -11,8 +11,8 @@ export default async (req, res) => {
       rejectUnauthorized: false,
     },
     auth: {
-      user: "gikzen@gmail.com",
-      pass: "lucasmaidana",
+      user: process.env.user,
+      pass: process.env.pass,
     },
   });
 

@@ -4,13 +4,15 @@ import nodemailer from "nodemailer";
 export default async (req, res) => {
   const { name, lastname, email, subject, message } = req.body;
   const transporter = nodemailer.createTransport({
+    service: "gmail", //smtp.gmail.com
     host: "smtp.gmail.com",
-    port: 587,
-    ignoreTLS: false,
-    secure: false,
+    port: 25,
+    tls: {
+      rejectUnauthorized: false,
+    },
     auth: {
-      user: process.env.user,
-      pass: process.env.pass,
+      user: "gikzen@gmail.com",
+      pass: "lucasmaidana",
     },
   });
 

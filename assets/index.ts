@@ -323,6 +323,7 @@ export const Proyect = styled.div<IHeight>`
     height: 80%;
     display: block;
     object-fit: cover;
+    border-radius: 15px;
   }
   p {
     color: black;

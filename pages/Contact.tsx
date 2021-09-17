@@ -5,17 +5,20 @@ import {
   Formulario,
   InputContainer,
   SubmitButton,
+  ContainerForm,
+  BoxFormAccepted,
 } from "../assets";
 import { useForm } from "@formspree/react";
 const ContactPage: React.FC = () => {
   const [state, handleSubmit] = useForm("xknkyrqv");
   if (state.succeeded) {
     return (
-      <section>
-        <div>Gracias por enviarme un email te respondere lo antes posible!</div>
-      </section>
+      <ContainerForm>
+        <BoxFormAccepted>
+          <p>Gracias por enviarme un email te respondere lo antes posible!</p>
+        </BoxFormAccepted>
+      </ContainerForm>
     );
-    console.log("enviado");
   }
   return (
     <ContactSection>

@@ -306,10 +306,10 @@ export const ProyectsContainer = styled.div`
   }
 `;
 
-export const Proyect = styled.div<IHeight>`
+export const Proyect = styled.a<IHeight>`
   display: inline-block;
   width: 100%;
-  height: ${(props) => props.height && `${props.height}px`};
+
   width: 100%;
   color: ${({ theme }) => theme.white};
   border: 0.2px solid #e6e6e6;
@@ -320,14 +320,15 @@ export const Proyect = styled.div<IHeight>`
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
   img {
     width: 100%;
-    height: 80%;
     display: block;
     object-fit: cover;
     border-radius: 15px;
+    height: ${(props) => props.height && `${props.height}px`};
   }
   p {
     color: black;
     text-align: center;
+    margin: 7px 0px;
   }
   &:hover {
     cursor: pointer;
@@ -346,6 +347,11 @@ export const Proyect = styled.div<IHeight>`
   @media (max-width: 768px) {
     // grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
   }
+`;
+export const ProyectName = styled.p`
+  padding: 2px;
+  font-family: "Fira Sans", "Lato", sans-serif;
+  font-weight: 500;
 `;
 /**Contacto */
 export const ContactSection = styled.section`
@@ -435,4 +441,21 @@ export const FooterContainer = styled.footer`
   p {
     text-align: center;
   }
+`;
+
+export const ContainerForm = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+export const BoxFormAccepted = styled.div`
+  width: 60%;
+  height: 90px;
+  padding: 15px;
+  background-color: ${({ theme }) => theme.green};
+  color: whitesmoke;
+  text-align: center;
+  font-size: 15px;
+  display: grid;
+  place-items: center;
 `;

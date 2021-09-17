@@ -4,6 +4,7 @@ import {
   SkillsNavContainer,
   ProyectsContainer,
   Proyect,
+  ProyectName,
 } from "../assets";
 const proyectsPortfolio = [
   {
@@ -12,7 +13,7 @@ const proyectsPortfolio = [
     name: "Pokedex",
     img: "https://3.bp.blogspot.com/-74nn-cQOCLo/W0fid6SoaMI/AAAAAAAAbUA/IjWIC1muWvAPKW2fcd01KnAPuG9MHXEBACLcBGAs/s1600/pp%2B%25282%2529.jpg",
     link: "",
-    linkGitHub: "",
+    linkGitHub: "https://github.com/LMANMAI/Pokedex",
     technologies: "",
   },
   {
@@ -124,7 +125,7 @@ const proyectsPortfolio = [
     technologies: "",
   },
   {
-    height: 450,
+    height: 400,
     proyectType: "FE",
     name: "Burger Landing",
     img: "https://firebasestorage.googleapis.com/v0/b/portfoliodb-b259d.appspot.com/o/burger.jpg?alt=media&token=0da81932-cdb0-4f91-b7fe-b70a0d8615b6",
@@ -183,9 +184,15 @@ const ProyectsPage: React.FC = () => {
       <ProyectsContainer>
         {React.Children.toArray(
           items.map((proyecto) => (
-            <Proyect key={proyecto.name} height={proyecto.height}>
+            <Proyect
+              key={proyecto.name}
+              height={proyecto.height}
+              href={proyecto.linkGitHub}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               <img src={proyecto.img} alt={proyecto.name} />
-              <p>{proyecto.name}</p>
+              <ProyectName>{proyecto.name}</ProyectName>
             </Proyect>
           ))
         )}

@@ -88,13 +88,4 @@ const Skills = () => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  // ...
-
-  return {
-    props: {
-      //data: skills,
-    },
-  };
-};
 export default Skills;

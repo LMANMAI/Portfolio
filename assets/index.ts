@@ -104,7 +104,7 @@ export const MenuContainer = styled.nav<IMenu>`
       flex-direction: row;
     }
     ${Button} {
-      &:first-child {
+      &:first-of-type {
         display: none;
       }
     }
@@ -162,7 +162,7 @@ export const Presentiation = styled.div`
     font-size: 14px;
     font-weight: 300;
   }
-  p:first-child,
+  p:first-of-type,
   p > span {
     font-weight: bold;
     font-size: 2rem;

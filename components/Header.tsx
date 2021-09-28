@@ -45,12 +45,12 @@ const Header: React.FC<HeaderProps> = () => {
                 <FiHome /> Home
               </li>
             </Link>
-            <Link href="/Journey">
+            {/* <Link href="/Journey">
               <li onClick={() => handleClickMenu()}>
                 <FiUser />
                 Journey
               </li>
-            </Link>
+            </Link> */}
             <Link href="/Skills">
               <li onClick={() => handleClickMenu()}>
                 <FiCode />

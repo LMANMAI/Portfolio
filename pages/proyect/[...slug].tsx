@@ -1,17 +1,26 @@
 import React from "react";
-
+import {
+  SlugContainer,
+  SlugTechnologies,
+  Skill,
+  SlugImgContainer,
+} from "../../assets";
 const ProyectPage = ({ proyect }) => {
   return (
-    <section>
+    <>
       <h2>{proyect.name}</h2>
-      <h3>Tecnologias</h3>
-      {proyect.technologies.map((elemento) => (
-        <li>{elemento}</li>
-      ))}
-      <div>
-        <img src={proyect.image} alt={proyect.name} />
-      </div>
-    </section>
+      <SlugContainer>
+        <SlugTechnologies>
+          {proyect.technologies.map((elemento) => (
+            <Skill>{elemento}</Skill>
+          ))}
+        </SlugTechnologies>
+
+        <SlugImgContainer>
+          <img src={proyect.image} alt={proyect.name} />
+        </SlugImgContainer>
+      </SlugContainer>
+    </>
   );
 };
 export async function getServerSideProps({ query }) {

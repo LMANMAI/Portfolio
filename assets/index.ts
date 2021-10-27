@@ -459,3 +459,20 @@ export const BoxFormAccepted = styled.div`
   display: grid;
   place-items: center;
 `;
+export const SlugContainer = styled.section`
+  display: flex;
+`;
+export const SlugTechnologies = styled.div`
+  border: 1px solid red;
+  width: 100%;
+`;
+export const SlugImgContainer = styled.div`
+  width: 90%;
+  margin: 0 auto;
+  img {
+    width: 100%;
+  }
+  @media (min-width: 768px) {
+    max-width: 50%;
+  }
+`;

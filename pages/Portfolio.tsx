@@ -17,7 +17,6 @@ interface IProyects {
   technologies: [String];
 }
 const ProyectsPage = ({ proyectsPortfolio }) => {
-  console.log("desde el navegador", proyectsPortfolio.proyects);
   const [items, setLayoutItems] = useState(proyectsPortfolio.proyects);
   const handleClick = (pType: string) => {
     if (pType === "all") {
@@ -59,7 +58,6 @@ const ProyectsPage = ({ proyectsPortfolio }) => {
 export const getServerSideProps = async (context) => {
   const res = await fetch("https://portfolio-api-lucas.herokuapp.com/proyects");
   const data = await res.json();
-  console.log("lo que llega de la api es: ", data);
   return {
     props: {
       proyectsPortfolio: data,

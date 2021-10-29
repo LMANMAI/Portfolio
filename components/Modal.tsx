@@ -5,7 +5,6 @@ import { ModalView, ModalContent, ModalCloseButton } from "../assets";
 
 const Modal = (props: { open: boolean; setClose: Function; children: any }) => {
   const modalRef = useRef();
-
   const animation = useSpring({
     config: {
       duration: 25,
@@ -42,7 +41,7 @@ const Modal = (props: { open: boolean; setClose: Function; children: any }) => {
                 <ModalCloseButton onClick={() => props.setClose()}>
                   <GrClose />
                 </ModalCloseButton>
-                {props.children}
+                <div className="modal_container">{props.children}</div>
               </ModalContent>
             </animated.div>
           </ModalView>

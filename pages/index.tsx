@@ -18,8 +18,8 @@ export default function Home() {
           Hi there I'm <span>Lucas</span>!
         </p>
         <p>
-          i'm Developer based in AR, constly learning about frontend , i use the
-          MERN stack with typescript, i also know Next.js and i really want to
+          I'm Developer based in AR, constly learning about frontend , I use the
+          MERN stack with typescript, I also know Next.js and i really want to
           start working as a developer and keep learning. 🌱 I’m currently
           learning TypeScript and better practices on my code.
         </p>

@@ -67,22 +67,20 @@ const Skills = () => {
     <PanelContainer>
       <h2>My Skills</h2>
       <Panel>
-        {React.Children.toArray(
-          skills_Array.map((skill) => (
-            <Skill>
-              <div>
-                {skill.nombre}
-                {skill.certificate && <BiBadgeCheck />}
-              </div>
-              <Separador></Separador>
-              <SkillContainer>
-                {skill.curso.map((curso) => (
-                  <p>{curso}</p>
-                ))}
-              </SkillContainer>
-            </Skill>
-          ))
-        )}
+        {skills_Array.map((skill) => (
+          <Skill key={skill.nombre}>
+            <div>
+              {skill.nombre}
+              {skill.certificate && <BiBadgeCheck />}
+            </div>
+            <Separador></Separador>
+            <SkillContainer>
+              {skill.curso.map((curso) => (
+                <p>{curso}</p>
+              ))}
+            </SkillContainer>
+          </Skill>
+        ))}
       </Panel>
     </PanelContainer>
   );

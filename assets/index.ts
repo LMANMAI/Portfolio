@@ -124,15 +124,9 @@ export const MenuContainer = styled.nav<IMenu>`
 `;
 /*About me Page */
 export const AboutMeContainer = styled.section`
-  /* display: grid;
-  grid-template-rows: auto 1fr; */
   hr {
     width: 90%;
     margin: 10px auto;
-  }
-  @media (min-width: 768px) {
-    /* grid-template-rows: none;
-    grid-template-columns: 2fr 1fr; */
   }
   @media (min-width: 1024px) {
     align-items: center;
@@ -306,11 +300,6 @@ export const ProyectsContainer = styled.div`
   margin: 0 auto;
   column-count: 4;
   column-width: 150px;
-  @media (max-width: 768px) {
-    // grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  }
-  div {
-  }
 `;
 
 export const Proyect = styled.a<IHeight>`
@@ -350,9 +339,6 @@ export const Proyect = styled.a<IHeight>`
     &:hover {
       box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
     }
-  }
-  @media (max-width: 768px) {
-    // grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
   }
 `;
 export const ProyectName = styled.p`
@@ -440,8 +426,6 @@ export const SubmitButton = styled.input`
 `;
 /*Footer */
 export const FooterContainer = styled.footer`
-  /* position: absolute;
-  bottom: 0px; */
   width: 100%;
   background-color: ${({ theme }) => theme.green};
   color: white;
@@ -469,11 +453,16 @@ export const BoxFormAccepted = styled.div`
 export const SlugContainer = styled.section`
   display: flex;
   flex-direction: column;
+  .slug_link_container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+  }
 `;
 export const SlugTechnologies = styled.div`
   display: flex;
   justify-content: center;
-  gap: 15px;
   width: fit-content;
   margin: 0 auto;
   ${Skill} {
@@ -499,12 +488,22 @@ export const SlugImgContainer = styled.div`
 export const SlugDesc = styled.span`
   margin: 10px auto;
   text-align: center;
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
 `;
-
+export const SlugLinks = styled.a`
+  width: fit-content;
+  color: black;
+  margin: 5px;
+  padding: 5px;
+  background-color: ${({ theme }) => theme.brown};
+  color: white;
+  padding: 7px;
+  border-radius: 18px;
+`;
 export const ModalView = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(2px);
   position: fixed;
@@ -532,6 +531,10 @@ export const ModalContent = styled.div`
     min-width: 40vw;
     width: fit-content;
     padding: 40px;
+  }
+  .modal_container {
+    text-align: center;
+    margin: 25px;
   }
 `;
 export const ModalCloseButton = styled.button`

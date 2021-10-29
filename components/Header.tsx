@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Modal from "./Modal";
 import { useRouter } from "next/router";
@@ -24,10 +24,13 @@ const Header: React.FC<HeaderProps> = () => {
   const [menuvalue, setMenuValue] = useState(false);
   const [open, setOpen] = useState(false);
   const router = useRouter();
+  useEffect(() => {
+    setMenuValue(false);
+  }, []);
   const handleClickMenu = () => {
     setMenuValue(!menuvalue);
   };
-  const mesage = `I haven't had an experience with it yet, but I'd really appreciate it if you would give me a chance! Thank you`;
+  const mesage = `I haven't had an experience with it yet, but I'd really appreciate it if you would give me a chance! Thank you 🤟`;
 
   const handleJob = () => {
     setOpen(!open);
@@ -42,7 +45,7 @@ const Header: React.FC<HeaderProps> = () => {
           }}
         >
           {" "}
-          Lucas_Maidana
+          {`{name: Lucas_Maidana}`}
         </p>
 
         <Button onClick={() => handleClickMenu()}>

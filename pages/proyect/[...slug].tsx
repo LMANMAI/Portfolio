@@ -5,8 +5,10 @@ import {
   Skill,
   SlugImgContainer,
   SlugDesc,
+  SlugLinks,
 } from "../../assets";
 const ProyectPage = ({ proyect }) => {
+  console.log(proyect);
   return (
     <>
       <h2>{proyect.name}</h2>
@@ -15,8 +17,8 @@ const ProyectPage = ({ proyect }) => {
           <img src={proyect.image} alt={proyect.name} />
         </SlugImgContainer>
         <SlugTechnologies>
-          {proyect.technologies.map((elemento) => (
-            <Skill>{elemento}</Skill>
+          {proyect.technologies.map((elemento, index) => (
+            <Skill key={index}>{elemento}</Skill>
           ))}
         </SlugTechnologies>
         <SlugDesc>
@@ -24,6 +26,14 @@ const ProyectPage = ({ proyect }) => {
           esse vitae nesciunt harum omnis rerum voluptas ipsa vero delectus ad,
           magni corporis suscipit, ut iusto dolore repellendus totam impedit.
         </SlugDesc>
+        <div className="slug_link_container">
+          <SlugLinks href={proyect.link} target="_blank">
+            Ver proyecto
+          </SlugLinks>
+          <SlugLinks href={proyect.linkGitHub} target="_blank">
+            Ver codigo
+          </SlugLinks>
+        </div>
       </SlugContainer>
     </>
   );

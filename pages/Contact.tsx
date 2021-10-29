@@ -15,7 +15,10 @@ const ContactPage: React.FC = () => {
     return (
       <ContainerForm>
         <BoxFormAccepted>
-          <p>Gracias por enviarme un email te respondere lo antes posible!</p>
+          <p>
+            Thank you for sending me an email, I will answer you as soon as
+            possible!😄
+          </p>
         </BoxFormAccepted>
       </ContainerForm>
     );
@@ -27,15 +30,30 @@ const ContactPage: React.FC = () => {
       <Formulario onSubmit={handleSubmit}>
         <InputContainer>
           <div>
-            <input type="text" name="name" placeholder="Name" />
+            <input
+              autoComplete="off"
+              type="text"
+              name="name"
+              placeholder="Name"
+            />
           </div>
           <div>
-            <input type="text" name="lastname" placeholder="Last Name" />
+            <input
+              autoComplete="off"
+              type="text"
+              name="lastname"
+              placeholder="Last Name"
+            />
           </div>
         </InputContainer>
         <InputContainer>
           <div>
-            <input type="text" name="email" placeholder="Email" />
+            <input
+              autoComplete="off"
+              type="text"
+              name="email"
+              placeholder="Email"
+            />
           </div>
           <div>
             <input

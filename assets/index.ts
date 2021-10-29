@@ -471,10 +471,11 @@ export const SlugContainer = styled.section`
   flex-direction: column;
 `;
 export const SlugTechnologies = styled.div`
-  width: 100%;
   display: flex;
   justify-content: center;
   gap: 15px;
+  width: fit-content;
+  margin: 0 auto;
   ${Skill} {
     width: fit-content;
     height: fit-content;

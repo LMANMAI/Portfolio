@@ -18,11 +18,10 @@ export default function Home() {
           Hi there I'm <span>Lucas</span>!
         </p>
         <p>
-          Soy técnico en Informática ,poseo conocimiento y formación sobre
-          distintas tecnologías y lenguajes de programación, me interesa poder
-          trabajar en una empresa que me permita seguir desarrollándome en este
-          área. Me gusta trabajar en equipo, y creo que es importante para crear
-          entre todos un buen ambiente laboral.
+          i'm Developer based in AR, constly learning about frontend , i use the
+          MERN stack with typescript, i also know Next.js and i really want to
+          start working as a developer and keep learning. 🌱 I’m currently
+          learning TypeScript and better practices on my code.
         </p>
       </Presentiation>
       <hr />

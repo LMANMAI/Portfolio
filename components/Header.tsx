@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
+import Modal from "./Modal";
+import { useRouter } from "next/router";
 import {
   HeaderElement,
   MenuContainer,
@@ -20,15 +22,28 @@ import {
 interface HeaderProps {}
 const Header: React.FC<HeaderProps> = () => {
   const [menuvalue, setMenuValue] = useState(false);
-
+  const [open, setOpen] = useState(false);
+  const router = useRouter();
   const handleClickMenu = () => {
     setMenuValue(!menuvalue);
+  };
+  const mesage = `I haven't had an experience with it yet, but I'd really appreciate it if you would give me a chance! Thank you`;
+
+  const handleJob = () => {
+    setOpen(!open);
   };
 
   return (
     <HeaderElement>
       <MenuHeader>
-        <p> Lucas_Maidana</p>
+        <p
+          onClick={() => {
+            router.push("/");
+          }}
+        >
+          {" "}
+          Lucas_Maidana
+        </p>
 
         <Button onClick={() => handleClickMenu()}>
           <FiGrid />
@@ -70,11 +85,14 @@ const Header: React.FC<HeaderProps> = () => {
               </li>
             </Link>
             <Link href="#!">
-              <li onClick={() => handleClickMenu()}>
+              <li onClick={() => handleJob()}>
                 <FiFolder />
                 Experience
               </li>
             </Link>
+            {open ? (
+              <Modal setClose={setOpen} open={open} children={mesage} />
+            ) : null}
           </MenuLinks>
         </MenuContainer>
       </MenuHeader>

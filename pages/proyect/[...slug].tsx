@@ -4,21 +4,26 @@ import {
   SlugTechnologies,
   Skill,
   SlugImgContainer,
+  SlugDesc,
 } from "../../assets";
 const ProyectPage = ({ proyect }) => {
   return (
     <>
       <h2>{proyect.name}</h2>
       <SlugContainer>
+        <SlugImgContainer>
+          <img src={proyect.image} alt={proyect.name} />
+        </SlugImgContainer>
         <SlugTechnologies>
           {proyect.technologies.map((elemento) => (
             <Skill>{elemento}</Skill>
           ))}
         </SlugTechnologies>
-
-        <SlugImgContainer>
-          <img src={proyect.image} alt={proyect.name} />
-        </SlugImgContainer>
+        <SlugDesc>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel aperiam
+          esse vitae nesciunt harum omnis rerum voluptas ipsa vero delectus ad,
+          magni corporis suscipit, ut iusto dolore repellendus totam impedit.
+        </SlugDesc>
       </SlugContainer>
     </>
   );

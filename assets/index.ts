@@ -20,6 +20,11 @@ export const LayoutContainer = styled.main`
   background-color: ${({ theme }) => theme.white};
   color: ${({ theme }) => theme.black};
   margin: 10px auto;
+  h2 {
+    text-align: center;
+    font-size: 2.125rem;
+    font-weight: lighter;
+  }
 `;
 export const HeaderElement = styled.header``;
 
@@ -28,7 +33,9 @@ export const MenuHeader = styled.div`
   justify-content: space-between;
   padding: 0.75rem 1rem;
   color: ${({ theme }) => theme.brown};
-
+  p {
+    cursor: pointer;
+  }
   font-size: 1.14rem;
   svg {
     font-size: 1.75rem;
@@ -202,23 +209,19 @@ export const SocialButton = styled.a`
 /**Skills Page */
 export const PanelContainer = styled.section`
   padding: 1rem 2rem;
+  width: 100%;
+  margin: 0 auto;
+  @media (min-width: 768px) {
+    width: 80%;
+  }
 `;
 export const Panel = styled.div`
-  //background-color: ${({ theme }) => theme.light_gray};
   display: grid;
   place-items: center;
-  margin: 0 auto;
-  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
-  gap: 1rem;
-
-  /* //tablet
+  grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+  gap: 0.725rem;
   @media (min-width: 768px) {
-  } */
-  //desktop
-  @media (min-width: 1024px) {
-    padding: 2rem;
-    width: 90%;
-    grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
   }
 `;
 export const Separador = styled.div`
@@ -231,8 +234,10 @@ export const Separador = styled.div`
 `;
 
 export const Skill = styled.div`
-  height: 90px;
+  height: calc(fit-content + 5px);
+  flex-grow: 1;
   width: 100%;
+  margin: 10px;
   background-color: whitesmoke;
   border-radius: 15px;
   padding: 1rem;
@@ -262,12 +267,14 @@ export const Skill = styled.div`
       }
     }
   }
-  @media (min-width: 768px) {
-    height: 150px;
-  }
 `;
 export const SkillContainer = styled.div`
   display: flex;
+  justify-content: center;
+  padding: 5px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 /**Portfolio */
@@ -461,18 +468,79 @@ export const BoxFormAccepted = styled.div`
 `;
 export const SlugContainer = styled.section`
   display: flex;
+  flex-direction: column;
 `;
 export const SlugTechnologies = styled.div`
-  border: 1px solid red;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  ${Skill} {
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+  }
 `;
 export const SlugImgContainer = styled.div`
   width: 90%;
-  margin: 0 auto;
+  margin: 10px auto;
+  display: flex;
+  border-radius: 15px;
   img {
     width: 100%;
+    height: auto;
+    margin: auto;
   }
   @media (min-width: 768px) {
     max-width: 50%;
+  }
+`;
+export const SlugDesc = styled.span`
+  margin: 10px auto;
+  text-align: center;
+  width: 500px;
+`;
+
+export const ModalView = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(2px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+export const ModalContent = styled.div`
+  width: 90vw;
+  border-radius: 15px;
+  padding: 15px;
+  background-color: white;
+  max-height: 85vh;
+  height: fit-content;
+  overflow: auto;
+  h4 {
+    text-align: center;
+  }
+  @media (min-width: 768px) {
+    min-width: 40vw;
+    width: fit-content;
+    padding: 40px;
+  }
+`;
+export const ModalCloseButton = styled.button`
+  border: none;
+  background-color: transparent;
+  text-align: end;
+  width: 100%;
+  cursor: pointer;
+  svg {
+    font-size: 20px;
+    font-weight: bold;
   }
 `;

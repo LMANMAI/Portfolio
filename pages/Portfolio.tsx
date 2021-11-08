@@ -14,16 +14,16 @@ const container = {
   hidden: { opacity: 1, scale: 0 },
   visible: {
     opacity: 1,
-    scale: 1,
+    scale: 0.95,
     transition: {
-      delayChildren: 0.4,
+      delayChildren: 0.3,
       staggerChildren: 0.2,
     },
   },
 };
 
 const item = {
-  hidden: { y: 20, opacity: 0 },
+  hidden: { y: 25, opacity: 0 },
   visible: {
     y: 0,
     opacity: 1,
@@ -75,7 +75,7 @@ const ProyectsPage = ({ proyectsPortfolio }) => {
   );
 };
 
-export const getServerSideProps = async (context) => {
+export const getServerSideProps = async () => {
   const res = await fetch("https://portfolio-api-lucas.herokuapp.com/proyects");
   const data = await res.json();
   return {

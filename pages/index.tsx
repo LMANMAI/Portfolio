@@ -8,18 +8,10 @@ import {
 } from "../assets";
 import { SiMinutemailer } from "react-icons/si";
 import { TiSocialLinkedin, TiSocialGithub } from "react-icons/ti";
-import FileSaver from "file-saver";
-
 export default function Home() {
-  // const saveFile = () => {
-  //   FileSaver.saveAs(
-  //     process.env.REACT_APP_CLIENT_URL + "/cv.pdf",
-  //     "Lucas Maidana CV.pdf"
-  //   );
-  // };
   return (
     <AboutMeContainer>
-      <Circle>{/* <img src="" alt="Profile" /> */}</Circle>
+      <Circle>{/* <img src="" alt="Profile Picture" /> */}</Circle>
 
       <Presentiation>
         <p>

@@ -8,8 +8,15 @@ import {
 } from "../assets";
 import { SiMinutemailer } from "react-icons/si";
 import { TiSocialLinkedin, TiSocialGithub } from "react-icons/ti";
+import FileSaver from "file-saver";
 
 export default function Home() {
+  const saveFile = () => {
+    FileSaver.saveAs(
+      process.env.PUBLIC_URL + "/resources/cv.pdf",
+      "Lucas Maidana CV.pdf"
+    );
+  };
   return (
     <AboutMeContainer>
       <Circle>{/* <img src="" alt="Profile" /> */}</Circle>
@@ -42,7 +49,7 @@ export default function Home() {
       </Social>
       <hr />
       <div className="button_download_container">
-        <SocialButton className="download_btn" href="../assets/cv.pdf" download>
+        <SocialButton className="download_btn" onClick={() => saveFile()}>
           Download CV
         </SocialButton>
       </div>

@@ -137,10 +137,7 @@ export const AboutMeContainer = styled.section`
       border-radius: 15px;
       transition: all 350ms ease;
     }
-    &:hover {
-      .download_btn {
-        letter-spacing: 1px;
-      }
+    
     }
   }
   @media (min-width: 1024px) {

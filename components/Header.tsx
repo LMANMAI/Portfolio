@@ -44,8 +44,7 @@ const Header: React.FC<HeaderProps> = () => {
             router.push("/");
           }}
         >
-          {" "}
-          {`{name: Lucas_Maidana}`}
+          Lucas_Maidana
         </p>
 
         <Button onClick={() => handleClickMenu()}>

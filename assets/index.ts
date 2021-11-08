@@ -1,4 +1,5 @@
-import styled, { StyledFunction } from "styled-components";
+import styled from "styled-components";
+import { motion } from "framer-motion";
 {
   /*
  //tablet
@@ -128,6 +129,20 @@ export const AboutMeContainer = styled.section`
     width: 90%;
     margin: 10px auto;
   }
+  .button_download_container {
+    margin: 0 auto;
+    width: fit-content;
+    .download_btn {
+      width: fit-content;
+      border-radius: 15px;
+      transition: all 350ms ease;
+    }
+    &:hover {
+      .download_btn {
+        letter-spacing: 1px;
+      }
+    }
+  }
   @media (min-width: 1024px) {
     align-items: center;
   }
@@ -191,6 +206,10 @@ export const SocialButton = styled.a`
   align-items: center;
   justify-content: center;
   transition: all 250ms ease-in-out;
+  .download_btn {
+    width: fit-content;
+    border-radius: none;
+  }
   svg {
     font-size: 1.925rem;
     color: whitesmoke;
@@ -293,7 +312,7 @@ export const SkillsNavContainer = styled.nav`
   }
 `;
 
-export const ProyectsContainer = styled.div`
+export const ProyectsContainer = styled(motion.div)`
   padding: 15px;
   transition: all 300ms 200ms ease-in-out;
   width: 95%;
@@ -302,7 +321,7 @@ export const ProyectsContainer = styled.div`
   column-width: 150px;
 `;
 
-export const Proyect = styled.a<IHeight>`
+export const Proyect = styled(motion.a)<IHeight>`
   display: inline-block;
   width: 100%;
 

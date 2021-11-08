@@ -8,6 +8,7 @@ import {
 } from "../assets";
 import { SiMinutemailer } from "react-icons/si";
 import { TiSocialLinkedin, TiSocialGithub } from "react-icons/ti";
+
 export default function Home() {
   return (
     <AboutMeContainer>
@@ -39,6 +40,12 @@ export default function Home() {
           <SiMinutemailer />
         </SocialButton>
       </Social>
+      <hr />
+      <div className="button_download_container">
+        <SocialButton className="download_btn" href="../assets/cv.pdf" download>
+          Download CV
+        </SocialButton>
+      </div>
     </AboutMeContainer>
   );
 }

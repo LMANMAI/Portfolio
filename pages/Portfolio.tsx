@@ -7,15 +7,28 @@ import {
   ProyectName,
 } from "../assets";
 import { useRouter } from "next/router";
-interface IProyects {
-  height: Number;
-  proyectType: String;
-  name: String;
-  image: String;
-  link: String;
-  linkGitHub: String;
-  technologies: [String];
-}
+import { motion } from "framer-motion";
+
+//animacion
+const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.4,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const item = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+};
 const ProyectsPage = ({ proyectsPortfolio }) => {
   const [items, setLayoutItems] = useState(proyectsPortfolio.proyects);
   const handleClick = (pType: string) => {
@@ -37,13 +50,20 @@ const ProyectsPage = ({ proyectsPortfolio }) => {
         <button onClick={() => handleClick("BE")}>Back End</button>
         <button onClick={() => handleClick("challenge")}>Challenges</button>
       </SkillsNavContainer>
-      <ProyectsContainer>
+      <ProyectsContainer
+        className="container"
+        variants={container}
+        initial="hidden"
+        animate="visible"
+      >
         {React.Children.toArray(
           items.map((proyecto) => (
             <Proyect
               key={proyecto.name}
               height={proyecto.height}
               onClick={() => router.push(`/proyect/${proyecto._id}`)}
+              className="item"
+              variants={item}
             >
               <img src={proyecto.image} alt={proyecto.name} />
               <ProyectName>{proyecto.name}</ProyectName>

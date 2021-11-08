@@ -13,7 +13,7 @@ import FileSaver from "file-saver";
 export default function Home() {
   const saveFile = () => {
     FileSaver.saveAs(
-      process.env.PUBLIC_URL + "/resources/cv.pdf",
+      process.env.REACT_APP_CLIENT_URL + "../resources/cv.pdf",
       "Lucas Maidana CV.pdf"
     );
   };
@@ -49,8 +49,14 @@ export default function Home() {
       </Social>
       <hr />
       <div className="button_download_container">
-        <SocialButton className="download_btn" onClick={() => saveFile()}>
-          Download CV
+        <SocialButton
+          className="download_btn"
+          // href="https://drive.google.com/file/d/1k2T3_s2kE_IQEw9RrBVZ5Kn0H2kzWbn4/view?usp=sharing"
+          // download="Lucas_Maidana_resume.pdf"
+          // target="_blank"
+          onClick={() => saveFile()}
+        >
+          Download Resume
         </SocialButton>
       </div>
     </AboutMeContainer>

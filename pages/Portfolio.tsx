@@ -43,35 +43,38 @@ const ProyectsPage = ({ proyectsPortfolio }) => {
   };
   const router = useRouter();
   return (
-    <PortfolioContainer>
-      <SkillsNavContainer>
-        <button onClick={() => handleClick("all")}>All</button>
-        <button onClick={() => handleClick("FE")}>Front End</button>
-        <button onClick={() => handleClick("BE")}>Back End</button>
-        <button onClick={() => handleClick("challenge")}>Challenges</button>
-      </SkillsNavContainer>
-      <ProyectsContainer
-        className="container"
-        variants={container}
-        initial="hidden"
-        animate="visible"
-      >
-        {React.Children.toArray(
-          items.map((proyecto) => (
-            <Proyect
-              key={proyecto.name}
-              height={proyecto.height}
-              onClick={() => router.push(`/proyect/${proyecto._id}`)}
-              className="item"
-              variants={item}
-            >
-              <img src={proyecto.image} alt={proyecto.name} />
-              <ProyectName>{proyecto.name}</ProyectName>
-            </Proyect>
-          ))
-        )}
-      </ProyectsContainer>
-    </PortfolioContainer>
+    <>
+      <h2>Some of my work</h2>
+      <PortfolioContainer>
+        <SkillsNavContainer>
+          <button onClick={() => handleClick("all")}>All</button>
+          <button onClick={() => handleClick("FE")}>Front End</button>
+          <button onClick={() => handleClick("BE")}>Back End</button>
+          <button onClick={() => handleClick("challenge")}>Challenges</button>
+        </SkillsNavContainer>
+        <ProyectsContainer
+          className="container"
+          variants={container}
+          initial="hidden"
+          animate="visible"
+        >
+          {React.Children.toArray(
+            items.map((proyecto) => (
+              <Proyect
+                key={proyecto.name}
+                height={proyecto.height}
+                onClick={() => router.push(`/proyect/${proyecto._id}`)}
+                className="item"
+                variants={item}
+              >
+                <img src={proyecto.image} alt={proyecto.name} />
+                <ProyectName>{proyecto.name}</ProyectName>
+              </Proyect>
+            ))
+          )}
+        </ProyectsContainer>
+      </PortfolioContainer>
+    </>
   );
 };
 

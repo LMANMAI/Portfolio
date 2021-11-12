@@ -8,7 +8,6 @@ import {
   SlugLinks,
 } from "../../assets";
 const ProyectPage = ({ proyect }) => {
-  console.log(proyect);
   return (
     <>
       <h2>{proyect.name}</h2>
@@ -28,10 +27,10 @@ const ProyectPage = ({ proyect }) => {
         </SlugDesc>
         <div className="slug_link_container">
           <SlugLinks href={proyect.link} target="_blank">
-            Ver proyecto
+            Go to Proyect
           </SlugLinks>
           <SlugLinks href={proyect.linkGitHub} target="_blank">
-            Ver codigo
+            See the Code
           </SlugLinks>
         </div>
       </SlugContainer>

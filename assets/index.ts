@@ -21,13 +21,20 @@ export const LayoutContainer = styled.main`
   background-color: ${({ theme }) => theme.white};
   color: ${({ theme }) => theme.black};
   margin: 10px auto;
+  margin-top: 60px;
   h2 {
     text-align: center;
     font-size: 2.125rem;
     font-weight: lighter;
   }
 `;
-export const HeaderElement = styled.header``;
+export const HeaderElement = styled.header`
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  background-color: ${({ theme }) => theme.white};
+  z-index: 99;
+`;
 
 export const MenuHeader = styled.div`
   display: flex;
@@ -125,17 +132,20 @@ export const MenuContainer = styled.nav<IMenu>`
 `;
 /*About me Page */
 export const AboutMeContainer = styled.section`
+  //margin-bottom: 6rem;
   hr {
     width: 90%;
     margin: 10px auto;
   }
   .button_download_container {
-    margin: 0 auto;
+    margin: 1rem auto;
     width: fit-content;
+    display: flex;
     .download_btn {
       width: fit-content;
       border-radius: 15px;
       transition: all 350ms ease;
+      background-color: ${({ theme }) => theme.green};
     }
   }
   @media (min-width: 1024px) {
@@ -190,6 +200,7 @@ export const Presentiation = styled.div`
 export const Social = styled.div`
   display: flex;
   justify-content: center;
+  margin: 20px;
 `;
 export const SocialButton = styled.a`
   border: none;
@@ -221,17 +232,36 @@ export const SocialButton = styled.a`
 `;
 /**Skills Page */
 export const PanelContainer = styled.section`
-  padding: 1rem 2rem;
+  position: relative;
+  z-index: 1;
   width: 100%;
-  margin: 0 auto;
+  margin: 2rem auto;
+  //height: calc(fit-content + 20vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   @media (min-width: 768px) {
     width: 80%;
   }
 `;
+export const CircleBackground = styled.div`
+  background-color: ${({ theme }) => theme.green};
+  position: absolute;
+  top: 15px;
+  z-index: -1;
+  border-radius: 100%;
+  @media (min-width: 1024px) {
+    width: 100vh;
+    height: 100vh;
+    left: -50%;
+    top: 0px;
+  }
+`;
+
 export const Panel = styled.div`
   display: grid;
   place-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 0.725rem;
   @media (min-width: 768px) {
     grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
@@ -245,9 +275,18 @@ export const Separador = styled.div`
   background: linear-gradient(45deg, #656d4a, #a4ac86, #7f4f24);
   background-size: 200% 200%;
 `;
-
+export const SkillContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
 export const Skill = styled.div`
-  height: calc(fit-content + 5px);
+  height: 80%;
   flex-grow: 1;
   width: 100%;
   margin: 10px;
@@ -260,9 +299,18 @@ export const Skill = styled.div`
   p {
     margin: 0 5px;
   }
+  .skil_tittle {
+    display: flex;
+  }
+  .skil_name {
+    text-transform: capitalize;
+  }
+  /* overflow: hidden;
+  word-wrap: break-word; */
   &:hover {
     transform: scale(1.05);
     cursor: pointer;
+
     ${Separador} {
       -webkit-animation: Animation 5s ease infinite;
       -moz-animation: Animation 5s ease infinite;
@@ -281,25 +329,17 @@ export const Skill = styled.div`
     }
   }
 `;
-export const SkillContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  padding: 5px;
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-`;
 
 /**Portfolio */
 export const PortfolioContainer = styled.section`
-  padding: 20px;
+  padding: 12px;
   margin: 10px 0px;
+  height: fit-content;
 `;
 export const SkillsNavContainer = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.525rem;
   gap: 5px;
   button {
     border: none;
@@ -370,16 +410,9 @@ export const ContactSection = styled.section`
   padding: 1rem;
   position: relative;
   z-index: 1;
-  h2 {
-    text-align: center;
-    font-size: 3.625rem;
-    font-family: "Julius Sans One", sans-serif;
-    font-weight: lighter;
-  }
 `;
 export const BackgrondBox = styled.div`
   background-color: ${({ theme }) => theme.brown};
-
   max-height: 450px;
   position: absolute;
   top: 15px;

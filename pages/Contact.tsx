@@ -24,9 +24,9 @@ const ContactPage: React.FC = () => {
     );
   }
   return (
-    <ContactSection>
+    <ContactSection id="contact">
       <BackgrondBox />
-      <h2>Hello! i'll waiting for're message</h2>
+      <h2>I'll waiting for're message</h2>
       <Formulario onSubmit={handleSubmit}>
         <InputContainer>
           <div>

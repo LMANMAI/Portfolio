@@ -62,13 +62,7 @@ const Header: React.FC<HeaderProps> = () => {
                 <FiHome /> Home
               </li>
             </Link>
-            {/* <Link href="/Journey">
-              <li onClick={() => handleClickMenu()}>
-                <FiUser />
-                Journey
-              </li>
-            </Link> */}
-            <Link href="/Skills">
+            <Link href="/#skils">
               <li onClick={() => handleClickMenu()}>
                 <FiCode />
                 Skills
@@ -80,7 +74,7 @@ const Header: React.FC<HeaderProps> = () => {
                 Portfolio
               </li>
             </Link>
-            <Link href="/Contact">
+            <Link href="/#contact">
               <li onClick={() => handleClickMenu()}>
                 <FiSend />
                 Contact

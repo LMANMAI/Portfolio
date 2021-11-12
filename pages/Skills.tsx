@@ -1,34 +1,34 @@
 import React from "react";
-import { GetServerSideProps } from "next";
 import {
   PanelContainer,
   Panel,
   Separador,
   Skill,
   SkillContainer,
+  CircleBackground,
 } from "../assets";
 const skills_Array = [
   {
     certificate: true,
-    curso: ["Udemy"],
+    curso: ["Udemy", "YouTube", "Platzi"],
     nombre: "JavaScript",
     category: "FE",
   },
   {
     certificate: true,
-    curso: ["Udemy", "codigo facilito"],
+    curso: ["Udemy", "codigo facilito", "Documentation"],
     nombre: "TypeScript",
     category: "FE",
   },
   {
     certificate: false,
-    curso: ["Udemy", "Youtube", "Twicht"],
+    curso: ["Udemy", "Youtube", "Twicht", "Documentation"],
     nombre: "React.js",
     category: "FE",
   },
   {
     certificate: false,
-    curso: ["Udemy", "Youtube", "Twicht"],
+    curso: ["Udemy", "Youtube", "Twicht", "Documentation"],
     nombre: "Next.js",
     category: "FE",
   },
@@ -42,7 +42,7 @@ const skills_Array = [
   { certificate: false, curso: ["YouTube"], nombre: "Nest.js", category: "BE" },
   {
     certificate: false,
-    curso: ["Udemy", "YouTube"],
+    curso: ["Udemy", "YouTube", "Documentation"],
     nombre: "MongoDB",
     category: "BE",
   },
@@ -64,24 +64,25 @@ const skills_Array = [
 import { BiBadgeCheck } from "react-icons/bi";
 const Skills = () => {
   return (
-    <PanelContainer>
-      <h2>My Skills</h2>
+    <PanelContainer id="skils">
+      <h2>Some of my Skills</h2>
       <Panel>
-        {skills_Array.map((skill) => (
-          <Skill key={skill.nombre}>
-            <div>
-              {skill.nombre}
+        {skills_Array.map((skill, index) => (
+          <Skill key={index}>
+            <div className="skil_tittle">
+              <p>{skill.nombre}</p>
               {skill.certificate && <BiBadgeCheck />}
             </div>
             <Separador></Separador>
             <SkillContainer>
               {skill.curso.map((curso) => (
-                <p>{curso}</p>
+                <p className="skil_name">{curso}</p>
               ))}
             </SkillContainer>
           </Skill>
         ))}
       </Panel>
+      <CircleBackground />
     </PanelContainer>
   );
 };

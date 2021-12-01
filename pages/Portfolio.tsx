@@ -7,7 +7,6 @@ import {
   ProyectName,
 } from "../assets";
 import { useRouter } from "next/router";
-import { motion } from "framer-motion";
 
 //animacion
 const container = {

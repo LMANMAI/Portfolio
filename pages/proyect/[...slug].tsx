@@ -7,7 +7,18 @@ import {
   SlugDesc,
   SlugLinks,
 } from "../../assets";
-const ProyectPage = ({ proyect }) => {
+interface IProyectProp {
+  name: string;
+  link: string;
+  linkGitHub: string;
+  technologies: Array<string>;
+  image: string;
+  height: number;
+  proyectType: string;
+  desc: string;
+}
+const ProyectPage = (props: { proyect: IProyectProp }) => {
+  const { proyect } = props;
   return (
     <>
       <h2>{proyect.name}</h2>
@@ -20,11 +31,7 @@ const ProyectPage = ({ proyect }) => {
             <Skill key={index}>{elemento}</Skill>
           ))}
         </SlugTechnologies>
-        <SlugDesc>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel aperiam
-          esse vitae nesciunt harum omnis rerum voluptas ipsa vero delectus ad,
-          magni corporis suscipit, ut iusto dolore repellendus totam impedit.
-        </SlugDesc>
+        <SlugDesc>{proyect.desc}</SlugDesc>
         <div className="slug_link_container">
           <SlugLinks href={proyect.link} target="_blank">
             Go to Proyect
@@ -45,13 +52,11 @@ export async function getServerSideProps({ query }) {
     const _slugs = query.slug;
     slugs = _slugs.join("_");
   }
-  console.log("El slug que llega por el query es", slugs);
   const res = await fetch(
     `https://portfolio-api-lucas.herokuapp.com/proyects/${slugs}`
   );
   const data = await res.json();
 
-  console.log("el proyecto es : ", data);
   return {
     props: {
       proyect: data.proyect,

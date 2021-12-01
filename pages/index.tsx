@@ -10,12 +10,17 @@ import { SiMinutemailer } from "react-icons/si";
 import { TiSocialLinkedin, TiSocialGithub } from "react-icons/ti";
 import Skills from "./Skills";
 import Contact from "./Contact";
-
 export default function Home() {
   return (
     <>
       <AboutMeContainer id="/">
-        <Circle>{/* <img src="" alt="Profile Picture" /> */}</Circle>
+        <Circle>
+          <img
+            src="https://media-exp1.licdn.com/dms/image/C5603AQERbo1UP1B7AQ/profile-displayphoto-shrink_800_800/0/1638242157415?e=1643846400&v=beta&t=O8ZzRGp0cYCPopm0EKezGcfxB-PkQdfUF0TeAGjNiqQ"
+            alt="Profile Picture"
+            loading="lazy"
+          />
+        </Circle>
         <Presentiation>
           <p>
             Hi there I'm <span className="name">Lucas</span>!
@@ -45,7 +50,7 @@ export default function Home() {
         <hr />
         <div className="button_download_container">
           <SocialButton
-            href="cv.pdf"
+            href="lucasmaidanacv.pdf"
             download="LucasMaidanaCV.pdf"
             className="download_btn"
           >
@@ -53,7 +58,7 @@ export default function Home() {
           </SocialButton>
           <SocialButton
             className="download_btn"
-            href="https://calendly.com/lucasmaidana/30min"
+            href="https://calendly.com/lucasmaidana/meeting"
             target="_blank"
           >
             Set Meeting

@@ -155,13 +155,15 @@ export const AboutMeContainer = styled.section`
 export const Circle = styled.div`
   grid-row: 1 / 2;
   margin: 0 auto;
-  background-color: ${({ theme }) => theme.brown};
   width: 280px;
   height: 280px;
   border-radius: 100% 100% 150% 150%;
   display: flex;
   img {
-    border: 1px solid red;
+    width: 280px;
+    height: 280px;
+    border-radius: 100%;
+    left: -10px;
   }
   @media (min-width: 768px) {
     grid-column: 2 / 3;
@@ -417,6 +419,7 @@ export const BackgrondBox = styled.div`
   position: absolute;
   top: 15px;
   z-index: -1;
+
   @media (min-width: 1024px) {
     width: 700px;
     height: 70vh;

@@ -27,7 +27,6 @@ export default async (req, res) => {
       <p>Mensaje: ${message}</p><br>      
       `,
     });
-    console.log("Mensaje enviado ", emailRes.messageId);
   } catch (error) {
     console.log("El error fue: ", error);
   }

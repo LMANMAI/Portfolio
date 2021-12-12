@@ -15,7 +15,7 @@ export default function Home() {
     <>
       <AboutMeContainer id="/">
         <Circle>
-          <img src="../assets/image.jpg" alt="Profile Picture" loading="lazy" />
+          <img src="image.jpg" alt="Profile Picture" loading="lazy" />
         </Circle>
         <Presentiation>
           <p>

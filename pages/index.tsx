@@ -16,7 +16,7 @@ export default function Home() {
       <AboutMeContainer id="/">
         <Circle>
           <img
-            src="https://media-exp1.licdn.com/dms/image/C5603AQERbo1UP1B7AQ/profile-displayphoto-shrink_800_800/0/1638242157415?e=1643846400&v=beta&t=O8ZzRGp0cYCPopm0EKezGcfxB-PkQdfUF0TeAGjNiqQ"
+            src="https://twitter.com/lucasmanuel_18/photo"
             alt="Profile Picture"
             loading="lazy"
           />

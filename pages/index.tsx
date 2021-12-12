@@ -15,11 +15,7 @@ export default function Home() {
     <>
       <AboutMeContainer id="/">
         <Circle>
-          <img
-            src="https://twitter.com/lucasmanuel_18/photo"
-            alt="Profile Picture"
-            loading="lazy"
-          />
+          <img src="../assets/image.jpg" alt="Profile Picture" loading="lazy" />
         </Circle>
         <Presentiation>
           <p>

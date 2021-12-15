@@ -6,6 +6,7 @@ const DefaultTheme = {
   gray: "#333333",
   light_gray: "#b1a7a6",
   black: "#161a1d",
+  dark_green: "#6b705c",
   menuvalue: false,
   heigth: Number,
 };

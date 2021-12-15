@@ -6,6 +6,8 @@ import {
   Skill,
   SkillContainer,
   CircleBackground,
+  CircleBackgroundRight,
+  CircleBackground3,
 } from "../assets";
 const skills_Array = [
   {
@@ -83,6 +85,8 @@ const Skills = () => {
         ))}
       </Panel>
       <CircleBackground />
+      <CircleBackgroundRight />
+      <CircleBackground3 />
     </PanelContainer>
   );
 };

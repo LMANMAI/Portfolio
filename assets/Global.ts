@@ -19,12 +19,13 @@ body{
     background-color: ${({ theme }) => theme.white};
     color: ${({ theme }) => theme.brown};
     &::-webkit-scrollbar-thumb {
-    background: ${({ theme }) => theme.light_brown};
+    background: ${({ theme }) => theme.green};
     border-radius: 4px;
     }
     &::-webkit-scrollbar-thumb:hover {
-      background: ${({ theme }) => theme.brown};
+      background: ${({ theme }) => theme.dark_green};
     box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
     }
     &::-webkit-scrollbar {
     width: 10px;     /* Tamaño del scroll en vertical */

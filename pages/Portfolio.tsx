@@ -66,7 +66,7 @@ const ProyectsPage = ({ proyectsPortfolio }) => {
                 className="item"
                 variants={item}
               >
-                <img src={proyecto.image} alt={proyecto.name} />
+                <img src={proyecto.thumnail} alt={proyecto.name} />
                 <ProyectName>{proyecto.name}</ProyectName>
               </Proyect>
             ))

@@ -233,17 +233,28 @@ export const SocialButton = styled.a`
   }
 `;
 /**Skills Page */
+
 export const PanelContainer = styled.section`
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   margin: 2rem auto;
-  //height: calc(fit-content + 20vh);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
+  h2 {
+    color: white;
+  }
   @media (min-width: 768px) {
-    width: 80%;
+    width: 100%;
+  }
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: ${({ theme }) => theme.brown};
   }
 `;
 export const CircleBackground = styled.div`
@@ -253,16 +264,47 @@ export const CircleBackground = styled.div`
   z-index: -1;
   border-radius: 100%;
   @media (min-width: 1024px) {
+    width: 200vh;
+    height: 200vh;
+    left: -20%;
+    top: -50%;
+    filter: blur(3.5rem);
+  }
+`;
+export const CircleBackgroundRight = styled.div`
+  background-color: ${({ theme }) => theme.brown};
+  position: absolute;
+  top: 15px;
+  z-index: -1;
+  border-radius: 100%;
+  @media (min-width: 1024px) {
+    width: 200vh;
+    height: 200vh;
+    right: -50%;
+    top: -50%;
+    filter: blur(3.5rem);
+  }
+`;
+export const CircleBackground3 = styled.div`
+  background-color: ${({ theme }) => theme.light_brown};
+  position: absolute;
+  top: 15px;
+  z-index: -1;
+  border-radius: 100%;
+  @media (min-width: 1024px) {
     width: 100vh;
     height: 100vh;
-    left: -50%;
-    top: 0px;
+    right: 25%;
+    top: -50%;
+    filter: blur(3.5rem);
   }
 `;
 
 export const Panel = styled.div`
+  width: 70%;
   display: grid;
   place-items: center;
+  margin: 0px auto;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 0.725rem;
   @media (min-width: 768px) {
@@ -292,12 +334,13 @@ export const Skill = styled.div`
   flex-grow: 1;
   width: 100%;
   margin: 10px;
-  background-color: whitesmoke;
-  border-radius: 15px;
   padding: 1rem;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   transition: transform 300ms ease-in-out;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.3px);
+  -webkit-backdrop-filter: blur(7.3px);
   p {
     margin: 0 5px;
   }
@@ -307,8 +350,6 @@ export const Skill = styled.div`
   .skil_name {
     text-transform: capitalize;
   }
-  /* overflow: hidden;
-  word-wrap: break-word; */
   &:hover {
     transform: scale(1.05);
     cursor: pointer;
@@ -346,8 +387,8 @@ export const SkillsNavContainer = styled.nav`
   button {
     border: none;
     outline: none;
-    border-radius: 8px;
-    padding: 1.25vw 2.125vw;
+    border-radius: 18px;
+    padding: 0.525rem 2.125vw;
     color: ${({ theme }) => theme.white};
     background-color: ${({ theme }) => theme.light_brown};
     cursor: pointer;
@@ -370,9 +411,9 @@ export const Proyect = styled(motion.a)<IHeight>`
   width: 100%;
   color: ${({ theme }) => theme.white};
   border: 0.2px solid #e6e6e6;
-  border-radius: 15px;
+  border-radius: 10px;
   transition: all 200ms ease-in-out;
-  padding: 5px;
+  padding: 10px;
   margin-bottom: 15px;
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
   img {
@@ -389,8 +430,8 @@ export const Proyect = styled(motion.a)<IHeight>`
   }
   &:hover {
     cursor: pointer;
-    padding: 10px;
-    padding-left: 1rem;
+    //padding: 10px;
+    //padding-left: 1rem;
     transform: scale(1.02);
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   }
@@ -432,7 +473,17 @@ export const Formulario = styled.form`
   min-height: 200px;
   padding: 1rem;
   height: fit-content;
-  background-color: ${({ theme }) => theme.green};
+  max-width: 450px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 10px solid transparent;
+  border-image: linear-gradient(
+    0deg,
+    ${({ theme }) => theme.light_brown},
+    ${({ theme }) => theme.green}
+  );
+  border-image-slice: 1;
   @media (min-width: 768px) {
     width: 60%;
   }
@@ -457,12 +508,17 @@ export const InputContainer = styled.div`
     outline: none;
     padding: 10px;
     margin: 3px;
+    background: transparent;
+    border-bottom: 1px solid #b9b8b8;
+    &:focus {
+      border-bottom: 1px solid ${({ theme }) => theme.brown};
+    }
   }
   textarea {
     resize: none;
     height: 90px;
+    font-family: Helvetica;
     &::placeholder {
-      font-family: Helvetica;
     }
   }
   div {
@@ -478,6 +534,7 @@ export const InputContainer = styled.div`
 export const SubmitButton = styled.input`
   padding: 10px;
   border: none;
+  border-radius: 16px;
 `;
 /*Footer */
 export const FooterContainer = styled.footer`

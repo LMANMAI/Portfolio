@@ -1,7 +1,6 @@
 import React from "react";
 import {
   ContactSection,
-  BackgrondBox,
   Formulario,
   InputContainer,
   SubmitButton,
@@ -25,46 +24,40 @@ const ContactPage: React.FC = () => {
   }
   return (
     <ContactSection id="contact">
-      <BackgrondBox />
       <h2>I'll waiting for're message</h2>
-      <Formulario onSubmit={handleSubmit}>
+      <Formulario onSubmit={handleSubmit} autoComplete="off">
         <InputContainer>
-          <div>
-            <input
-              autoComplete="off"
-              type="text"
-              name="name"
-              placeholder="Name"
-            />
-          </div>
-          <div>
-            <input
-              autoComplete="off"
-              type="text"
-              name="lastname"
-              placeholder="Last Name"
-            />
-          </div>
+          <input
+            autoComplete="off"
+            type="text"
+            name="name"
+            placeholder="Name"
+          />
         </InputContainer>
         <InputContainer>
-          <div>
-            <input
-              autoComplete="off"
-              type="text"
-              name="email"
-              placeholder="Email"
-            />
-          </div>
-          <div>
-            <input
-              type="text"
-              name="subject"
-              placeholder="What would you like to talk about"
-            />
-          </div>
+          <input
+            autoComplete="off"
+            type="text"
+            name="lastname"
+            placeholder="Last Name"
+          />
+        </InputContainer>
+        <InputContainer>
+          <input
+            autoComplete="off"
+            type="text"
+            name="email"
+            placeholder="Email"
+          />
         </InputContainer>
 
-        <InputContainer></InputContainer>
+        <InputContainer>
+          <input
+            type="text"
+            name="subject"
+            placeholder="What would you like to talk about"
+          />
+        </InputContainer>
 
         <InputContainer>
           <div>
@@ -75,7 +68,7 @@ const ContactPage: React.FC = () => {
           <SubmitButton
             type="submit"
             name=""
-            value="Let's work together"
+            value="Let's Talk"
             disabled={state.submitting}
           />
         </InputContainer>

@@ -244,70 +244,31 @@ export const PanelContainer = styled.section`
   justify-content: center;
   overflow: hidden;
   h2 {
-    color: white;
+    //color: white;
   }
   @media (min-width: 768px) {
     width: 100%;
   }
-  &::before {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: ${({ theme }) => theme.brown};
-  }
-`;
-export const CircleBackground = styled.div`
-  background-color: ${({ theme }) => theme.green};
-  position: absolute;
-  top: 15px;
-  z-index: -1;
-  border-radius: 100%;
-  @media (min-width: 1024px) {
-    width: 200vh;
-    height: 200vh;
-    left: -20%;
-    top: -50%;
-    filter: blur(3.5rem);
-  }
-`;
-export const CircleBackgroundRight = styled.div`
-  background-color: ${({ theme }) => theme.brown};
-  position: absolute;
-  top: 15px;
-  z-index: -1;
-  border-radius: 100%;
-  @media (min-width: 1024px) {
-    width: 200vh;
-    height: 200vh;
-    right: -50%;
-    top: -50%;
-    filter: blur(3.5rem);
-  }
-`;
-export const CircleBackground3 = styled.div`
-  background-color: ${({ theme }) => theme.light_brown};
-  position: absolute;
-  top: 15px;
-  z-index: -1;
-  border-radius: 100%;
-  @media (min-width: 1024px) {
-    width: 100vh;
-    height: 100vh;
-    right: 25%;
-    top: -50%;
-    filter: blur(3.5rem);
-  }
 `;
 
 export const Panel = styled.div`
-  width: 70%;
+  width: 100%;
   display: grid;
   place-items: center;
   margin: 0px auto;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 0.725rem;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-image: linear-gradient(
+    0deg,
+    ${({ theme }) => theme.light_brown},
+    ${({ theme }) => theme.green}
+  );
+  border-image-slice: 1;
+  padding: 15px 25px;
   @media (min-width: 768px) {
+    width: 80%;
     grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
   }
 `;
@@ -360,13 +321,13 @@ export const Skill = styled.div`
       animation: Animation 1250ms ease infinite;
       @keyframes Animation {
         0% {
-          background-position: 1% 50%;
+          background-position: 0% 50%;
         }
         50% {
-          background-position: 51% 100%;
+          background-position: 100% 50%;
         }
         100% {
-          background-position: 101% 0%;
+          background-position: 0% 50%;
         }
       }
     }
@@ -477,7 +438,8 @@ export const Formulario = styled.form`
   background: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
   border-image: linear-gradient(
     0deg,
     ${({ theme }) => theme.light_brown},

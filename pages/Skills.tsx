@@ -5,9 +5,6 @@ import {
   Separador,
   Skill,
   SkillContainer,
-  CircleBackground,
-  CircleBackgroundRight,
-  CircleBackground3,
 } from "../assets";
 const skills_Array = [
   {
@@ -40,8 +37,18 @@ const skills_Array = [
     nombre: "Node.js",
     category: "BE",
   },
-  { certificate: false, curso: ["Udemy"], nombre: "Exprees", category: "BE" },
-  { certificate: false, curso: ["YouTube"], nombre: "Nest.js", category: "BE" },
+  {
+    certificate: false,
+    curso: ["Udemy", "YouTube"],
+    nombre: "Exprees",
+    category: "BE",
+  },
+  {
+    certificate: false,
+    curso: ["YouTube", "Documentation", "Udemy"],
+    nombre: "Nest.js",
+    category: "BE",
+  },
   {
     certificate: false,
     curso: ["Udemy", "YouTube", "Documentation"],
@@ -52,7 +59,7 @@ const skills_Array = [
   {
     certificate: false,
     curso: ["Platzi", "Udemy"],
-    nombre: "Git",
+    nombre: "Git / GitHub",
     category: "BE",
   },
   {
@@ -71,10 +78,10 @@ const Skills = () => {
       <Panel>
         {skills_Array.map((skill, index) => (
           <Skill key={index}>
-            <div className="skil_tittle">
-              <p>{skill.nombre}</p>
+            <ul className="skil_tittle">
+              <li>{skill.nombre}</li>
               {skill.certificate && <BiBadgeCheck />}
-            </div>
+            </ul>
             <Separador></Separador>
             <SkillContainer>
               {skill.curso.map((curso) => (
@@ -84,9 +91,6 @@ const Skills = () => {
           </Skill>
         ))}
       </Panel>
-      <CircleBackground />
-      <CircleBackgroundRight />
-      <CircleBackground3 />
     </PanelContainer>
   );
 };

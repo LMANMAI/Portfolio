@@ -53,7 +53,7 @@ export async function getServerSideProps({ query }) {
     slugs = _slugs.join("_");
   }
   const res = await fetch(
-    `https://portfolio-api-lucas.herokuapp.com/proyects/${slugs}`
+    `https://portfolio-api-rest.vercel.app/proyects/${slugs}`
   );
   const data = await res.json();
 

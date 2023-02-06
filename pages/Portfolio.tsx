@@ -78,7 +78,7 @@ const ProyectsPage = ({ proyectsPortfolio }) => {
 };
 
 export const getServerSideProps = async () => {
-  const res = await fetch("https://portfolio-api-lucas.herokuapp.com/proyects");
+  const res = await fetch("https://portfolio-api-rest.vercel.app/proyects");
   const data = await res.json();
   return {
     props: {

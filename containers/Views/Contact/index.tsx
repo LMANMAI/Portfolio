@@ -6,7 +6,7 @@ import {
   SubmitButton,
   ContainerForm,
   BoxFormAccepted,
-} from "../assets";
+} from "../../../assets";
 import { useForm } from "@formspree/react";
 const ContactPage: React.FC = () => {
   const [state, handleSubmit] = useForm("xknkyrqv");

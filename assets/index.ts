@@ -54,6 +54,17 @@ export const MenuHeader = styled.div`
     background-color: transparent;
     color: ${({ theme }) => theme.brown};
   }
+   .button_download_container{
+    width: fit-content;
+    display: flex;
+    .download_btn {
+      width: fit-content;
+      border-radius: 15px;
+      transition: all 350ms ease;
+      background-color: ${({ theme }) => theme.green};
+    }
+   }
+   
   @media (min-width: 1024px) {
     display: flex;
     align-items: center;
@@ -70,19 +81,15 @@ export const Button = styled.button`
   outline: none;
 `;
 export const MenuLinks = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding: 3rem 1.5rem;
-  gap: 2rem;
+  // display: grid;
+  // grid-template-columns: repeat(3, 1fr);
+  // padding: 3rem 1.5rem;
+  // gap: 2rem;
 `;
 export const MenuContainer = styled.nav<IMenu>`
-  z-index: 99;
   margin: 0;
   padding: 0;
-  position: fixed;
-  top: ${(props) => (props.menuvalue ? "5px" : "-100%")};
-  left: 0;
-  width: 100%;
+  width: fit-content;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
   border-radius: 0 0 1.5rem 1.5rem;
   background-color: ${({ theme }) => theme.white};
@@ -214,11 +221,11 @@ export const SocialButton = styled.a`
   align-items: center;
   justify-content: center;
   transition: all 250ms ease-in-out;
-  button {
-    background-color: transparent;
-    border: none;
-    color: white;
-  }
+  // button {
+  //   background-color: transparent;
+  //   border: none;
+  //   color: white;
+  // }
   .download_btn {
     width: fit-content;
     border-radius: none;

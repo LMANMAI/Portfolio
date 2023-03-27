@@ -45,8 +45,10 @@ ul{
     list-style: none;
 }
 section{
-    min-height: 95vh;
-    padding: 1.725rem 0.4rem;
+  max-height: 95vh;
+  width: 90%;
+  padding: 1.725rem 0.4rem;
+  margin: 0px auto!important;
 }
 h2 {
     text-align: center;

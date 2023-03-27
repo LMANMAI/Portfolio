@@ -5,7 +5,7 @@ import {
   Separador,
   Skill,
   SkillContainer,
-} from "../assets";
+} from "../../../assets";
 const skills_Array = [
   {
     certificate: true,
@@ -73,7 +73,7 @@ const skills_Array = [
 import { BiBadgeCheck } from "react-icons/bi";
 const Skills = () => {
   return (
-    <PanelContainer id="skils">
+    <PanelContainer id="skills">
       <h2>Some of my Skills</h2>
       <Panel>
         {skills_Array.map((skill, index) => (

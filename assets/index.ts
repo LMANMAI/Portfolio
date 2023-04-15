@@ -221,11 +221,7 @@ export const SocialButton = styled.a`
   align-items: center;
   justify-content: center;
   transition: all 250ms ease-in-out;
-  // button {
-  //   background-color: transparent;
-  //   border: none;
-  //   color: white;
-  // }
+  
   .download_btn {
     width: fit-content;
     border-radius: none;

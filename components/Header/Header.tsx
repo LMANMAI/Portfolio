@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { SocialButton } from "assets";
+import { GiHamburgerMenu } from "react-icons/gi";
 import { NavContainer, Navigation, ButtonDownloadContainer } from "./styles";
 
 interface HeaderProps {}
 const Header: React.FC<HeaderProps> = () => {
-  const [menuvalue, setMenuValue] = useState(false);
+  const [menuvalue, setMenuValue] = useState(true);
   const [open, setOpen] = useState(false);
   const router = useRouter();
   useEffect(() => {
@@ -14,11 +15,6 @@ const Header: React.FC<HeaderProps> = () => {
   }, []);
   const handleClickMenu = () => {
     setMenuValue(!menuvalue);
-  };
-  const mesage = `I haven't had an experience with it yet, but I'd really appreciate it if you would give me a chance! Thank you 🤟`;
-
-  const handleJob = () => {
-    setOpen(!open);
   };
 
   return (
@@ -31,23 +27,23 @@ const Header: React.FC<HeaderProps> = () => {
         {"< Lucas Manuel Maidana />"}
       </p>
 
-      <Navigation>
+      <Navigation open={open}>
         <ul>
-          <Link href="/">
-            <li onClick={() => handleClickMenu()}>Home</li>
-          </Link>
-          <Link href="#experience">
-            <li onClick={() => handleJob()}>Experience</li>
-          </Link>
-          <Link href="/#skills">
-            <li onClick={() => handleClickMenu()}>Skills</li>
-          </Link>
-          <Link href="/#proyects">
-            <li onClick={() => handleClickMenu()}>Portfolio</li>
-          </Link>
-          <Link href="/#contact">
-            <li onClick={() => handleClickMenu()}>Contact</li>
-          </Link>
+          <li onClick={() => handleClickMenu()}>
+            <Link href="/">Home</Link>
+          </li>
+          <li onClick={() => handleClickMenu()}>
+            <Link href="#experience">Experience</Link>
+          </li>
+          <li onClick={() => handleClickMenu()}>
+            <Link href="/#skills">Skills</Link>
+          </li>
+          <li onClick={() => handleClickMenu()}>
+            <Link href="/#proyects">Portfolio</Link>
+          </li>
+          <li onClick={() => handleClickMenu()}>
+            <Link href="/#contact">Contact</Link>
+          </li>
         </ul>
       </Navigation>
 
@@ -59,6 +55,9 @@ const Header: React.FC<HeaderProps> = () => {
         >
           <button>Download Resume</button>
         </SocialButton>
+        <div id="menu_boton" onClick={() => setOpen(!open)}>
+          <GiHamburgerMenu />
+        </div>
       </ButtonDownloadContainer>
     </NavContainer>
   );
